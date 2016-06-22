@@ -16,6 +16,9 @@ html, body {
   width: 36px;
 }
 
+md-toolbar {
+  min-height: 56px;
+}
 
 md-toolbar h3 {
   margin: auto;
@@ -23,6 +26,12 @@ md-toolbar h3 {
 }
 
 /* Sidenav area */
+
+.site-side-nav {
+  width: 272px;
+  min-width: 272px;
+  max-width: 272px;
+}
 
 md-list-item > button {
   width:100%;
