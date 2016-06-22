@@ -15,7 +15,7 @@
   function UserService($q){
     var users = [
       {
-        name: 'Lia Lugo',
+        name: 'Summary',
         img: '../../assets/images/user-1.jpeg',
         content: 'I love cheese, especially airedale queso. Cheese and biscuits halloumi cauliflower cheese cottage cheese swiss boursin fondue caerphilly. Cow port-salut camembert de normandie macaroni cheese feta who moved my cheese babybel boursin. Red leicester roquefort boursin squirty cheese jarlsberg blue castello caerphilly chalk and cheese. Lancashire.'
       },

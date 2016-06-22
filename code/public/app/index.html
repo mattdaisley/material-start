@@ -35,9 +35,8 @@
 
         <md-sidenav ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left" class="site-side-nav md-whiteframe-z2" >
           <md-list>
-            <md-subheader class="md-no-sticky">Avatar with Name</md-subheader>
             <md-list-item ng-repeat="it in ul.users" ng-click="ul.selectUser(it)" ng-class="{'selected' : it === ul.selected }">
-              <img alt="{{ it.name }}" ng-src="{{ it.img }}" class="md-avatar">
+              <!-- <img alt="{{ it.name }}" ng-src="{{ it.img }}" class="md-avatar"> -->
               {{it.name}}
             </md-list-item>
           </md-list>
