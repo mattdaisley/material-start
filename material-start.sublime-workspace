@@ -1,0 +1,2268 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"chi",
+				"buildChildContainerTableTD"
+			],
+			[
+				"chil",
+				"childContainerTable"
+			],
+			[
+				"chilcontra",
+				"childContainerTable"
+			],
+			[
+				"chilc",
+				"buildChildContainerTableTR"
+			],
+			[
+				"builddom",
+				"BuildDom"
+			],
+			[
+				"buildchi",
+				"buildChildContainerTableTR"
+			],
+			[
+				"buildom",
+				"BuildDom"
+			],
+			[
+				"chcontr",
+				"childContainerTableTR"
+			],
+			[
+				"par",
+				"parentElem"
+			],
+			[
+				"rmarg",
+				"rMarginTestResult"
+			],
+			[
+				"colsp",
+				"colspan"
+			],
+			[
+				"ran",
+				"rAnyTest"
+			],
+			[
+				"prot",
+				"proto	Prototype"
+			],
+			[
+				"mar",
+				"marginTestResult"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"chec",
+				"checkPasswordComplete"
+			],
+			[
+				"getone",
+				"getOneByEmailComplete"
+			],
+			[
+				"ng",
+				"ngmodule	angular.module"
+			],
+			[
+				"mattd",
+				"mattdaisleykey"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"p",
+				"prototype"
+			],
+			[
+				"Web",
+				"WebTraffic"
+			],
+			[
+				"Webt",
+				"WebtrafficLog"
+			],
+			[
+				"we",
+				"WebtrafficSerivice"
+			],
+			[
+				"template",
+				"template_id"
+			],
+			[
+				"str",
+				"strFileText"
+			],
+			[
+				"stril",
+				"strFilePath"
+			],
+			[
+				"arrar",
+				"arrArticle"
+			],
+			[
+				"brok",
+				"brokerage_id"
+			],
+			[
+				"newtemp",
+				"new_template_name"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"displayad_image",
+				"displayad_image_format"
+			],
+			[
+				"siteso",
+				"sitescout"
+			],
+			[
+				"base",
+				"base64_encode"
+			],
+			[
+				"bas",
+				"base64_encode"
+			],
+			[
+				"urle",
+				"urldecode"
+			],
+			[
+				"inttemphip",
+				"intTemplateHeightPixels"
+			],
+			[
+				"newslet",
+				"newsletter_id"
+			],
+			[
+				"newsl",
+				"newsletter_id"
+			],
+			[
+				"intdsip",
+				"intDisplayadImageLeft"
+			],
+			[
+				"indsip",
+				"intDisplayAdImageScale"
+			],
+			[
+				"displadi",
+				"displayad_image_left"
+			],
+			[
+				"dipadimlef",
+				"displayad_image_left"
+			],
+			[
+				"dipadimto",
+				"displayad_image_top"
+			],
+			[
+				"pare",
+				"parentHeight"
+			],
+			[
+				"init",
+				"init-width"
+			],
+			[
+				"var",
+				"vertical-align"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"headlin",
+				"HEADLINE"
+			],
+			[
+				"plan",
+				"planomaticListings"
+			],
+			[
+				"objLi",
+				"objListingFull"
+			],
+			[
+				"strmls",
+				"strMLSNumbers"
+			],
+			[
+				"se",
+				"select-po"
+			],
+			[
+				"res",
+				"response"
+			],
+			[
+				"plano",
+				"planomaticTour"
+			],
+			[
+				"arr",
+				"arrTimestamps"
+			],
+			[
+				"temp",
+				"template_id"
+			],
+			[
+				"arrRe",
+				"arrResult"
+			],
+			[
+				"getEle",
+				"getElementsByTagName"
+			],
+			[
+				"newc",
+				"newContent"
+			],
+			[
+				"build",
+				"buildThumbPath"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "code/public/app/index.html",
+			"settings":
+			{
+				"buffer_size": 1970,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mattdaisley/www.rezora.com/mattRenderHTML.php",
+			"settings":
+			{
+				"buffer_size": 3625,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mattdaisley/www.rezora.com/matt.php",
+			"settings":
+			{
+				"buffer_size": 11380,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "(function(){\n\n  angular\n       .module('user')\n       .controller('UserController', [\n          'TemplateService', 'settingsTestService', 'buildDomService', '$mdSidenav', '$mdBottomSheet', '$timeout', '$log',\n          UserController\n       ]);\n\n  /**\n   * Main Controller for the Angular Material Starter App\n   * @param $scope\n   * @param $mdSidenav\n   * @param avatarsService\n   * @constructor\n   */\n  function UserController( TemplateService, settingsTestService, buildDomService, $mdSidenav, $mdBottomSheet, $timeout, $log ) {\n    var self = this;\n\n    self.Tests         = settingsTestService;\n    self.BuildDom      = buildDomService;\n\n    self.Sections     = [ ];\n    self.buildBox     = buildBox;\n    self.toggleList   = toggleUsersList;\n    self.makeContact  = makeContact;\n\n    // Load all registered Sections\n\n    TemplateService\n          .loadTemplate()\n          .then( function( Template ) {\n            self.Sections = [].concat(Template.Sections);\n            self.buildBox();\n          });\n\n    // *********************************\n    // Internal methods\n    // *********************************\n\n\n    /**\n     * Hide or Show the 'left' sideNav area\n     */\n    function toggleUsersList() {\n      $mdSidenav('left').toggle();\n    }\n\n    function buildBox() {\n      var sections = self.Sections;\n\n      sections.forEach(function(section) {\n        var columns = section.columns;\n\n        columns.forEach(function(column) {\n          var columnId = 'clm-'+section.Id+'-'+column.Id;\n          var contents = column.contents;\n\n          contents.forEach(function(content) {\n            var Settings = content.Settings;\n            var BuildDom = new self.BuildDom();\n            var Tests = new self.Tests(Settings);\n\n            var parentElem = angular.element(document.getElementById(columnId));\n\n            var contentId = 'cnt-'+section.Id+'-'+column.Id+'-'+content.Id;\n\n            if ( Tests.marginTest() || Tests.rAnyTest() ) {\n\n              // create the main table element\n              BuildDom.buildMainTable();\n              BuildDom.buildMainTableTR();\n              BuildDom.buildMainTableTD();\n\n              // add the responsive class\n              if ( Tests.rAnyTest() ) {\n                BuildDom.addMainTableRClass(contentId);\n              }\n\n              // add the top margin\n              if ( Tests.marginTopTest() ) {\n                BuildDom.buildTopMargin(Settings.Margin.Top, Tests.marginLeftTest(), Tests.marginRightTest());\n                BuildDom.mainTable.append(BuildDom.topMargin);\n              }\n\n              BuildDom.mainTable.append(BuildDom.mainTableTR);\n\n              // add the left margin\n              if ( Tests.marginLeftTest() ) {\n                BuildDom.buildLeftMargin(Settings.Margin.Left);\n                BuildDom.mainTableTR.append(BuildDom.leftMargin);\n              }\n\n              BuildDom.mainTableTR.append(BuildDom.mainTableTD);\n\n              // add the responsive margin container class\n              if ( Tests.rMarginTest() ) {\n                BuildDom.mainTableTD.attr('class', 'margin-container');\n              }\n\n              // add the right margin\n              if ( Tests.marginRightTest() ) {\n                BuildDom.buildRightMargin(Settings.Margin.Right);\n                BuildDom.mainTableTR.append(BuildDom.rightMargin);\n              }\n\n              // add the bottom margin\n              if ( Tests.marginBottomTest() ) {\n                BuildDom.buildBottomMargin(Settings.Margin.Bottom, Tests.marginLeftTest(), Tests.marginRightTest());\n                BuildDom.mainTable.append(BuildDom.bottomMargin);\n              }\n\n              parentElem.append(BuildDom.mainTable);\n              parentElem = BuildDom.mainTableTD;\n            }\n\n            if ( Tests.borderTest() ) {\n              BuildDom.buildBorder(Settings.Border.Top, Settings.Border.Right, Settings.Border.Bottom, Settings.Border.Left, Settings.Border.Color);\n              parentElem.append(BuildDom.border);\n              parentElem = BuildDom.border;\n            }\n\n            var content = angular.element('<div>'+contentId+'</div>');\n            parentElem.append(content);\n\n          });\n        });\n      });\n    }\n\n  }\n\n})();\n",
+			"file": "code/public/app/src/Template/UserController.js",
+			"file_size": 4210,
+			"file_write_time": 131112199640000000,
+			"settings":
+			{
+				"buffer_size": 4210,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "code/public/app/src/Template/Template.js",
+			"settings":
+			{
+				"buffer_size": 161,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mattdaisley/rezora/newsletters/107338/output.html",
+			"settings":
+			{
+				"buffer_size": 31676,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mattdaisley/rezora/newsletters/107338/no-settings.html",
+			"settings":
+			{
+				"buffer_size": 7815,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mattdaisley/rezora/newsletters/107338/all-settings.html",
+			"settings":
+			{
+				"buffer_size": 16684,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mattdaisley/rezora/newsletters/107338/content-all-settings.html",
+			"settings":
+			{
+				"buffer_size": 3673,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "var template = {\n	sections: [\n	]\n}",
+			"settings":
+			{
+				"buffer_size": 34,
+				"line_ending": "Unix",
+				"name": "var template = {"
+			}
+		},
+		{
+			"file": "/Users/mattdaisley/rezora/newsletters/p2730/template.html",
+			"settings":
+			{
+				"buffer_size": 5335,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "{\n  \"Sections\": [\n    {\n      \"Id\": 1,\n      \"Class\": \"body\",\n      \"OwnerType\": \"global\",\n      \"Columns\": [\n        {\n          \"Id\": 0,\n          \"Class\": \"body\",\n          \"Contents\": [\n            {\n              \"Id\": 1,\n              \"Html\": \"<div>Insert your message here.<br></div>\",\n              \"Class\": \"element\",\n              \"OwnerType\": \"global\",\n              \"LayoutDirectory\": \"content0.html\",\n              \"Order\": 0,\n              \"AttributeOrder\": 0,\n              \"Settings\": {\n                \"Editable\": {\n                  \"Disabled\": false,\n                  \"Inherit\": false\n                },\n                \"Dimensions\": {\n                  \"Width\": {\n                    \"Disabled\": false,\n                    \"Inherit\": true,\n                    \"Value\": 420,\n                    \"Ratio\": 100,\n                    \"Raio\": 100\n                  },\n                  \"Height\": {\n                    \"Disabled\": true,\n                    \"Inherit\": true,\n                    \"Value\": \"\",\n                    \"Ratio\": 1\n                  }\n                },\n                \"Color\": {\n                  \"Disabled\": true,\n                  \"Inherit\": false,\n                  \"Color\": \"\"\n                },\n                \"Source\": {\n                  \"Disabled\": true,\n                  \"Inherit\": false,\n                  \"Dynamic\": false,\n                  \"Src\": \"\",\n                  \"SrcFinal\": \"\"\n                },\n                \"Link\": {\n                  \"Disabled\": true,\n                  \"Inherit\": false,\n                  \"ShowAdv\": false,\n                  \"Url\": \"\",\n                  \"Target\": \"\",\n                  \"Title\": \"\"\n                },\n                \"Align\": {\n                  \"Disabled\": false,\n                  \"Inherit\": false,\n                  \"Align\": \"center\"\n                },\n                \"Font\": {\n                  \"Disabled\": false,\n                  \"ShowAdv\": false\n                },\n                \"FontColor\": {\n                  \"Disabled\": false,\n                  \"Inherit\": true,\n                  \"Color\": \"#000000\"\n                },\n                \"FontFamily\": {\n                  \"Disabled\": false,\n                  \"Inherit\": true,\n                  \"Font\": \"Arial,Helvetica Neue,Helvetica,sans-serif\"\n                },\n                \"FontSize\": {\n                  \"Disabled\": false,\n                  \"Inherit\": true,\n                  \"Size\": \"12px\"\n                },\n                \"LineHeight\": {\n                  \"Disabled\": false,\n                  \"Inherit\": true,\n                  \"Size\": \"auto\"\n                },\n                \"BgColor\": {\n                  \"Disabled\": false,\n                  \"Inherit\": false,\n                  \"Color\": \"#27AE61\",\n                  \"ShowAdv\": false\n                },\n                \"CanvasColor\": {\n                  \"Disabled\": true,\n                  \"Inherit\": false,\n                  \"Color\": \"#FFFFFF\"\n                },\n                \"HasOwnBoxModel\": {\n                  \"Disabled\": false,\n                  \"Inherit\": false,\n                  \"Value\": false\n                },\n                \"Border\": {\n                  \"Disabled\": false,\n                  \"Inherit\": false,\n                  \"ShowAdv\": false,\n                  \"Size\": 10,\n                  \"Top\": 10,\n                  \"Right\": 10,\n                  \"Bottom\": 10,\n                  \"Left\": 10,\n                  \"Color\": \"#FF5F63\",\n                  \"Style\": \"solid\"\n                },\n                \"Padding\": {\n                  \"Disabled\": false,\n                  \"Inherit\": false,\n                  \"ShowAdv\": false,\n                  \"Size\": 10,\n                  \"Top\": 10,\n                  \"Right\": 10,\n                  \"Bottom\": 10,\n                  \"Left\": 10\n                },\n                \"Margin\": {\n                  \"Disabled\": false,\n                  \"Inherit\": false,\n                  \"ShowAdv\": false,\n                  \"Size\": 10,\n                  \"Top\": 10,\n                  \"Right\": 10,\n                  \"Bottom\": 10,\n                  \"Left\": 10\n                },\n                \"Responsive\": {\n                  \"Hidden\": {\n                    \"Disabled\": false,\n                    \"Value\": false,\n                    \"Selectors\": [\n                      \"\"\n                    ],\n                    \"Rules\": {}\n                  },\n                  \"Dimensions\": {\n                    \"Disabled\": false,\n                    \"Width\": {\n                      \"Disabled\": false,\n                      \"RzBlock\": true,\n                      \"Width\": \"100\",\n                      \"Selectors\": [\n                        \".content-unit\"\n                      ],\n                      \"Rules\": {\n                        \"width\": \"100%\",\n                        \"min-width\": \"1%\"\n                      }\n                    },\n                    \"Height\": {\n                      \"Disabled\": true,\n                      \"Inherit\": true,\n                      \"Height\": \"auto\",\n                      \"Selectors\": [\n                        \".content-unit\"\n                      ],\n                      \"Rules\": {\n                        \"height\": \"auto\"\n                      }\n                    }\n                  },\n                  \"FontSize\": {\n                    \"Disabled\": false,\n                    \"Inherit\": true,\n                    \"Size\": \"12px\",\n                    \"Selectors\": [\n                      \".content-unit\",\n                      \".content-container\"\n                    ],\n                    \"Rules\": {\n                      \"font-size\": \"12px\"\n                    }\n                  },\n                  \"Align\": {\n                    \"Disabled\": false,\n                    \"Inherit\": true,\n                    \"Align\": \"center\",\n                    \"Selectors\": [\n                      \".content-unit\",\n                      \".content-container\"\n                    ],\n                    \"Rules\": {\n                      \"text-align\": \"center\"\n                    }\n                  },\n                  \"Margin\": {\n                    \"Disabled\": false,\n                    \"Inherit\": true,\n                    \"ShowAdv\": false,\n                    \"Size\": 10,\n                    \"Top\": 10,\n                    \"Right\": 10,\n                    \"Bottom\": 10,\n                    \"Left\": 10,\n                    \"Selectors\": [\n                      \".margin-container\"\n                    ],\n                    \"Rules\": {\n                      \"padding-top\": \"10px\",\n                      \"padding-left\": \"10px\",\n                      \"padding-bottom\": \"10px\",\n                      \"padding-right\": \"10px\"\n                    }\n                  },\n                  \"Border\": {\n                    \"Disabled\": false,\n                    \"Inherit\": true,\n                    \"ShowAdv\": false,\n                    \"Size\": 10,\n                    \"Top\": 10,\n                    \"Right\": 10,\n                    \"Bottom\": 10,\n                    \"Left\": 10,\n                    \"Selectors\": [\n                      \".border-container\"\n                    ],\n                    \"Rules\": {\n                      \"border-top\": \"10px\",\n                      \"border-left\": \"10px\",\n                      \"border-bottom\": \"10px\",\n                      \"border-right\": \"10px\",\n                      \"border-color\": \"#FF5F63\",\n                      \"border-style\": \"solid\",\n                      \"padding-top\": \"0px\",\n                      \"padding-left\": \"0px\",\n                      \"padding-bottom\": \"0px\",\n                      \"padding-right\": \"0px\"\n                    }\n                  },\n                  \"Padding\": {\n                    \"Disabled\": false,\n                    \"Inherit\": true,\n                    \"ShowAdv\": false,\n                    \"Size\": 10,\n                    \"Top\": 10,\n                    \"Right\": 10,\n                    \"Bottom\": 10,\n                    \"Left\": 10,\n                    \"Selectors\": [\n                      \".padding-container\"\n                    ],\n                    \"Rules\": {\n                      \"padding-top\": \"10px\",\n                      \"padding-left\": \"10px\",\n                      \"padding-bottom\": \"10px\",\n                      \"padding-right\": \"10px\"\n                    }\n                  }\n                }\n              },\n              \"Title\": \"Message\",\n              \"IsDefaultMessage\": false,\n              \"Restricted\": 0,\n              \"Visible\": 1,\n              \"Timestamp\": \"2015-09-14 17:32:18\",\n              \"Locked\": 0,\n              \"LockedBy\": \"\",\n              \"Empty\": false,\n              \"Published\": 1\n            }\n          ],\n          \"ContentCount\": 1,\n          \"LayoutDirectory\": \"column0.html\",\n          \"Order\": 0,\n          \"Settings\": {\n            \"Editable\": {\n              \"Disabled\": true,\n              \"Inherit\": false\n            },\n            \"Dimensions\": {\n              \"Width\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"Value\": 480,\n                \"Ratio\": 100\n              },\n              \"Height\": {\n                \"Disabled\": true,\n                \"Inherit\": true,\n                \"Value\": \"\",\n                \"Ratio\": 100\n              }\n            },\n            \"Color\": {\n              \"Disabled\": true,\n              \"Inherit\": false,\n              \"Color\": \"\"\n            },\n            \"Source\": {\n              \"Disabled\": true,\n              \"Inherit\": false,\n              \"Dynamic\": false,\n              \"Src\": \"\",\n              \"SrcFinal\": \"\"\n            },\n            \"Link\": {\n              \"Disabled\": true,\n              \"Inherit\": false,\n              \"ShowAdv\": false,\n              \"Url\": \"\",\n              \"Target\": \"\",\n              \"Title\": \"\"\n            },\n            \"Align\": {\n              \"Disabled\": false,\n              \"Inherit\": true,\n              \"Align\": \"left\"\n            },\n            \"Font\": {\n              \"Disabled\": false,\n              \"ShowAdv\": false\n            },\n            \"FontColor\": {\n              \"Disabled\": false,\n              \"Inherit\": true,\n              \"Color\": \"#000000\"\n            },\n            \"FontFamily\": {\n              \"Disabled\": false,\n              \"Inherit\": true,\n              \"Font\": \"Arial,Helvetica Neue,Helvetica,sans-serif\"\n            },\n            \"FontSize\": {\n              \"Disabled\": false,\n              \"Inherit\": true,\n              \"Size\": \"12px\"\n            },\n            \"LineHeight\": {\n              \"Disabled\": false,\n              \"Inherit\": true,\n              \"Size\": \"auto\"\n            },\n            \"BgColor\": {\n              \"Disabled\": false,\n              \"Inherit\": false,\n              \"Color\": \"#FFC136\",\n              \"ShowAdv\": false\n            },\n            \"CanvasColor\": {\n              \"Disabled\": true,\n              \"Inherit\": false,\n              \"Color\": \"#FFFFFF\"\n            },\n            \"HasOwnBoxModel\": {\n              \"Disabled\": false,\n              \"Inherit\": false,\n              \"Value\": false\n            },\n            \"Border\": {\n              \"Disabled\": false,\n              \"Inherit\": false,\n              \"ShowAdv\": false,\n              \"Size\": 10,\n              \"Top\": 10,\n              \"Right\": 10,\n              \"Bottom\": 10,\n              \"Left\": 10,\n              \"Color\": \"#00B5CC\",\n              \"Style\": \"\"\n            },\n            \"Padding\": {\n              \"Disabled\": false,\n              \"Inherit\": false,\n              \"ShowAdv\": false,\n              \"Size\": 10,\n              \"Top\": 10,\n              \"Right\": 10,\n              \"Bottom\": 10,\n              \"Left\": 10\n            },\n            \"Margin\": {\n              \"Disabled\": false,\n              \"Inherit\": false,\n              \"ShowAdv\": false,\n              \"Size\": 10,\n              \"Top\": 10,\n              \"Right\": 10,\n              \"Bottom\": 10,\n              \"Left\": 10\n            },\n            \"Responsive\": {\n              \"Hidden\": {\n                \"Disabled\": false,\n                \"Value\": false,\n                \"Selectors\": [\n                  \"\"\n                ],\n                \"Rules\": {}\n              },\n              \"Dimensions\": {\n                \"Disabled\": false,\n                \"Width\": {\n                  \"Disabled\": false,\n                  \"RzBlock\": true,\n                  \"Width\": \"100\",\n                  \"Selectors\": [\n                    \".content-unit\"\n                  ],\n                  \"Rules\": {\n                    \"width\": \"100%\",\n                    \"min-width\": \"1%\"\n                  }\n                },\n                \"Height\": {\n                  \"Disabled\": true,\n                  \"Inherit\": true,\n                  \"Height\": \"auto\",\n                  \"Selectors\": [\n                    \".content-unit\"\n                  ],\n                  \"Rules\": {\n                    \"height\": \"auto\"\n                  }\n                }\n              },\n              \"FontSize\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"Size\": \"12px\",\n                \"Selectors\": [\n                  \".content-unit\",\n                  \".content-container\"\n                ],\n                \"Rules\": {\n                  \"font-size\": \"12px\"\n                }\n              },\n              \"Align\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"Align\": \"left\",\n                \"Selectors\": [\n                  \".content-unit\",\n                  \".content-container\"\n                ],\n                \"Rules\": {\n                  \"text-align\": \"left\"\n                },\n                \"RuleName\": \"text-align\",\n                \"RuleValue\": \"center\"\n              },\n              \"Margin\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"ShowAdv\": false,\n                \"Size\": 10,\n                \"Top\": 10,\n                \"Right\": 10,\n                \"Bottom\": 10,\n                \"Left\": 10,\n                \"Selectors\": [\n                  \".margin-container\"\n                ],\n                \"Rules\": {\n                  \"padding-top\": \"10px\",\n                  \"padding-left\": \"10px\",\n                  \"padding-bottom\": \"10px\",\n                  \"padding-right\": \"10px\"\n                }\n              },\n              \"Border\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"ShowAdv\": false,\n                \"Size\": 10,\n                \"Top\": 10,\n                \"Right\": 10,\n                \"Bottom\": 10,\n                \"Left\": 10,\n                \"Selectors\": [\n                  \".border-container\"\n                ],\n                \"Rules\": {\n                  \"border-top\": \"10px\",\n                  \"border-left\": \"10px\",\n                  \"border-bottom\": \"10px\",\n                  \"border-right\": \"10px\",\n                  \"border-color\": \"#00B5CC\",\n                  \"border-style\": \"solid\"\n                }\n              },\n              \"Padding\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"ShowAdv\": false,\n                \"Size\": 10,\n                \"Top\": 10,\n                \"Right\": 10,\n                \"Bottom\": 10,\n                \"Left\": 10,\n                \"Selectors\": [\n                  \".padding-container\"\n                ],\n                \"Rules\": {\n                  \"padding-top\": \"10px\",\n                  \"padding-left\": \"10px\",\n                  \"padding-bottom\": \"10px\",\n                  \"padding-right\": \"10px\"\n                }\n              }\n            }\n          },\n          \"Title\": \"Column\",\n          \"IsDefaultMessage\": false,\n          \"CanBeEdited\": true,\n          \"Locked\": 0,\n          \"LockedBy\": \"\",\n          \"Html\": \"\"\n        }\n      ],\n      \"LayoutDirectory\": \"section0.html\",\n      \"Order\": 0,\n      \"Settings\": {\n        \"Editable\": {\n          \"Disabled\": true,\n          \"Inherit\": false\n        },\n        \"Dimensions\": {\n          \"Width\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"Value\": 540,\n            \"Ratio\": 100\n          },\n          \"Height\": {\n            \"Disabled\": true,\n            \"Inherit\": true,\n            \"Value\": \"\",\n            \"Ratio\": 100\n          }\n        },\n        \"Color\": {\n          \"Disabled\": true,\n          \"Inherit\": false,\n          \"Color\": \"\"\n        },\n        \"Source\": {\n          \"Disabled\": true,\n          \"Inherit\": false,\n          \"Dynamic\": false,\n          \"Src\": \"\",\n          \"SrcFinal\": \"\"\n        },\n        \"Link\": {\n          \"Disabled\": true,\n          \"Inherit\": false,\n          \"ShowAdv\": false,\n          \"Url\": \"\",\n          \"Target\": \"\",\n          \"Title\": \"\"\n        },\n        \"Align\": {\n          \"Disabled\": false,\n          \"Inherit\": true,\n          \"Align\": \"left\"\n        },\n        \"Font\": {\n          \"Disabled\": false,\n          \"ShowAdv\": false\n        },\n        \"FontColor\": {\n          \"Disabled\": false,\n          \"Inherit\": true,\n          \"Color\": \"#000000\"\n        },\n        \"FontFamily\": {\n          \"Disabled\": false,\n          \"Inherit\": true,\n          \"Font\": \"Arial,Helvetica Neue,Helvetica,sans-serif\"\n        },\n        \"FontSize\": {\n          \"Disabled\": false,\n          \"Inherit\": true,\n          \"Size\": \"12px\"\n        },\n        \"LineHeight\": {\n          \"Disabled\": false,\n          \"Inherit\": true,\n          \"Size\": \"auto\"\n        },\n        \"BgColor\": {\n          \"Disabled\": false,\n          \"Inherit\": false,\n          \"Color\": \"#F2F2F2\",\n          \"ShowAdv\": false\n        },\n        \"CanvasColor\": {\n          \"Disabled\": true,\n          \"Inherit\": false,\n          \"Color\": \"#FFFFFF\"\n        },\n        \"HasOwnBoxModel\": {\n          \"Disabled\": false,\n          \"Inherit\": false,\n          \"Value\": false\n        },\n        \"Border\": {\n          \"Disabled\": false,\n          \"Inherit\": false,\n          \"ShowAdv\": false,\n          \"Size\": 10,\n          \"Top\": 10,\n          \"Right\": 10,\n          \"Bottom\": 10,\n          \"Left\": 10,\n          \"Color\": \"#666666\",\n          \"Style\": \"\"\n        },\n        \"Padding\": {\n          \"Disabled\": false,\n          \"Inherit\": false,\n          \"ShowAdv\": false,\n          \"Size\": 10,\n          \"Top\": 10,\n          \"Right\": 10,\n          \"Bottom\": 10,\n          \"Left\": 10\n        },\n        \"Margin\": {\n          \"Disabled\": false,\n          \"Inherit\": false,\n          \"ShowAdv\": false,\n          \"Size\": 10,\n          \"Top\": 10,\n          \"Right\": 10,\n          \"Bottom\": 10,\n          \"Left\": 10\n        },\n        \"Responsive\": {\n          \"Hidden\": {\n            \"Disabled\": false,\n            \"Value\": false,\n            \"Selectors\": [\n              \"\"\n            ],\n            \"Rules\": {}\n          },\n          \"Dimensions\": {\n            \"Disabled\": false,\n            \"Width\": {\n              \"Disabled\": false,\n              \"RzBlock\": true,\n              \"Width\": \"100\",\n              \"Selectors\": [\n                \".content-unit\"\n              ],\n              \"Rules\": {\n                \"width\": \"100%\",\n                \"min-width\": \"1%\"\n              }\n            },\n            \"Height\": {\n              \"Disabled\": true,\n              \"Inherit\": true,\n              \"Height\": \"auto\",\n              \"Selectors\": [\n                \".content-unit\"\n              ],\n              \"Rules\": {\n                \"height\": \"auto\"\n              }\n            }\n          },\n          \"FontSize\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"Size\": \"12px\",\n            \"Selectors\": [\n              \".content-unit\",\n              \".content-container\"\n            ],\n            \"Rules\": {\n              \"font-size\": \"12px\"\n            }\n          },\n          \"Align\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"Align\": \"left\",\n            \"Selectors\": [\n              \".content-unit\",\n              \".content-container\"\n            ],\n            \"Rules\": {\n              \"text-align\": \"left\"\n            },\n            \"RuleName\": \"text-align\",\n            \"RuleValue\": \"center\"\n          },\n          \"Margin\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"ShowAdv\": false,\n            \"Size\": 10,\n            \"Top\": 10,\n            \"Right\": 10,\n            \"Bottom\": 10,\n            \"Left\": 10,\n            \"Selectors\": [\n              \".margin-container\"\n            ],\n            \"Rules\": {\n              \"padding-top\": \"10px\",\n              \"padding-left\": \"10px\",\n              \"padding-bottom\": \"10px\",\n              \"padding-right\": \"10px\"\n            }\n          },\n          \"Border\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"ShowAdv\": false,\n            \"Size\": 10,\n            \"Top\": 10,\n            \"Right\": 10,\n            \"Bottom\": 10,\n            \"Left\": 10,\n            \"Selectors\": [\n              \".border-container\"\n            ],\n            \"Rules\": {\n              \"border-top\": \"10px\",\n              \"border-left\": \"10px\",\n              \"border-bottom\": \"10px\",\n              \"border-right\": \"10px\",\n              \"border-color\": \"#666666\",\n              \"border-style\": \"solid\"\n            }\n          },\n          \"Padding\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"ShowAdv\": false,\n            \"Size\": 10,\n            \"Top\": 10,\n            \"Right\": 10,\n            \"Bottom\": 10,\n            \"Left\": 10,\n            \"Selectors\": [\n              \".padding-container\"\n            ],\n            \"Rules\": {\n              \"padding-top\": \"10px\",\n              \"padding-left\": \"10px\",\n              \"padding-bottom\": \"10px\",\n              \"padding-right\": \"10px\"\n            }\n          }\n        }\n      },\n      \"Title\": \"1 Column\",\n      \"ColumnCount\": 1,\n      \"ContentCount\": 1,\n      \"IsDefaultMessage\": false,\n      \"Timestamp\": null,\n      \"Html\": \"\",\n      \"Restricted\": 0,\n      \"Visible\": 1,\n      \"Locked\": 0,\n      \"LockedBy\": \"\"\n    },\n    {\n      \"Id\": 2,\n      \"Class\": \"body\",\n      \"OwnerType\": \"global\",\n      \"Columns\": [\n        {\n          \"Id\": 0,\n          \"Class\": \"body\",\n          \"Contents\": [\n            {\n              \"Id\": 1,\n              \"Html\": \"<div>Insert your message here.<br></div>\",\n              \"Class\": \"element\",\n              \"OwnerType\": \"global\",\n              \"LayoutDirectory\": \"content0.html\",\n              \"Order\": 0,\n              \"AttributeOrder\": 0,\n              \"Settings\": {\n                \"Editable\": {\n                  \"Disabled\": false,\n                  \"Inherit\": false\n                },\n                \"Dimensions\": {\n                  \"Width\": {\n                    \"Disabled\": false,\n                    \"Inherit\": true,\n                    \"Value\": 600,\n                    \"Ratio\": 100,\n                    \"Raio\": 100\n                  },\n                  \"Height\": {\n                    \"Disabled\": true,\n                    \"Inherit\": true,\n                    \"Value\": \"\",\n                    \"Ratio\": 1\n                  }\n                },\n                \"Color\": {\n                  \"Disabled\": true,\n                  \"Inherit\": false,\n                  \"Color\": \"\"\n                },\n                \"Source\": {\n                  \"Disabled\": true,\n                  \"Inherit\": false,\n                  \"Dynamic\": false,\n                  \"Src\": \"\",\n                  \"SrcFinal\": \"\"\n                },\n                \"Link\": {\n                  \"Disabled\": true,\n                  \"Inherit\": false,\n                  \"ShowAdv\": false,\n                  \"Url\": \"\",\n                  \"Target\": \"\",\n                  \"Title\": \"\"\n                },\n                \"Align\": {\n                  \"Disabled\": false,\n                  \"Inherit\": true,\n                  \"Align\": \"left\"\n                },\n                \"Font\": {\n                  \"Disabled\": false,\n                  \"ShowAdv\": false\n                },\n                \"FontColor\": {\n                  \"Disabled\": false,\n                  \"Inherit\": true,\n                  \"Color\": \"#000000\"\n                },\n                \"FontFamily\": {\n                  \"Disabled\": false,\n                  \"Inherit\": true,\n                  \"Font\": \"Arial,Helvetica Neue,Helvetica,sans-serif\"\n                },\n                \"FontSize\": {\n                  \"Disabled\": false,\n                  \"Inherit\": true,\n                  \"Size\": \"12px\"\n                },\n                \"LineHeight\": {\n                  \"Disabled\": false,\n                  \"Inherit\": true,\n                  \"Size\": \"auto\"\n                },\n                \"BgColor\": {\n                  \"Disabled\": false,\n                  \"Inherit\": true,\n                  \"Color\": \"#FFFFFF\",\n                  \"ShowAdv\": false\n                },\n                \"CanvasColor\": {\n                  \"Disabled\": true,\n                  \"Inherit\": false,\n                  \"Color\": \"#FFFFFF\"\n                },\n                \"HasOwnBoxModel\": {\n                  \"Disabled\": false,\n                  \"Inherit\": false,\n                  \"Value\": false\n                },\n                \"Border\": {\n                  \"Disabled\": false,\n                  \"Inherit\": false,\n                  \"ShowAdv\": false,\n                  \"Size\": 0,\n                  \"Top\": 0,\n                  \"Right\": 0,\n                  \"Bottom\": 0,\n                  \"Left\": 0,\n                  \"Color\": \"\",\n                  \"Style\": \"solid\"\n                },\n                \"Padding\": {\n                  \"Disabled\": false,\n                  \"Inherit\": false,\n                  \"ShowAdv\": false,\n                  \"Size\": \"0\",\n                  \"Top\": \"0\",\n                  \"Right\": \"0\",\n                  \"Bottom\": \"0\",\n                  \"Left\": \"0\"\n                },\n                \"Margin\": {\n                  \"Disabled\": false,\n                  \"Inherit\": false,\n                  \"ShowAdv\": false,\n                  \"Size\": 0,\n                  \"Top\": 0,\n                  \"Right\": 0,\n                  \"Bottom\": 0,\n                  \"Left\": 0\n                },\n                \"Responsive\": {\n                  \"Hidden\": {\n                    \"Disabled\": false,\n                    \"Value\": false,\n                    \"Selectors\": [\n                      \"\"\n                    ],\n                    \"Rules\": {}\n                  },\n                  \"Dimensions\": {\n                    \"Disabled\": false,\n                    \"Width\": {\n                      \"Disabled\": false,\n                      \"RzBlock\": true,\n                      \"Width\": \"100\",\n                      \"Selectors\": [\n                        \".content-unit\"\n                      ],\n                      \"Rules\": {\n                        \"width\": \"100%\",\n                        \"min-width\": \"1%\"\n                      }\n                    },\n                    \"Height\": {\n                      \"Disabled\": true,\n                      \"Inherit\": true,\n                      \"Height\": \"auto\",\n                      \"Selectors\": [\n                        \".content-unit\"\n                      ],\n                      \"Rules\": {\n                        \"height\": \"auto\"\n                      }\n                    }\n                  },\n                  \"FontSize\": {\n                    \"Disabled\": false,\n                    \"Inherit\": true,\n                    \"Size\": \"12px\",\n                    \"Selectors\": [\n                      \".content-unit\",\n                      \".content-container\"\n                    ],\n                    \"Rules\": {\n                      \"font-size\": \"12px\"\n                    }\n                  },\n                  \"Align\": {\n                    \"Disabled\": false,\n                    \"Inherit\": true,\n                    \"Align\": \"left\",\n                    \"Selectors\": [\n                      \".content-unit\",\n                      \".content-container\"\n                    ],\n                    \"Rules\": {\n                      \"text-align\": \"left\"\n                    }\n                  },\n                  \"Margin\": {\n                    \"Disabled\": false,\n                    \"Inherit\": true,\n                    \"ShowAdv\": false,\n                    \"Size\": 0,\n                    \"Top\": 0,\n                    \"Right\": 0,\n                    \"Bottom\": 0,\n                    \"Left\": 0,\n                    \"Selectors\": [\n                      \".margin-container\"\n                    ],\n                    \"Rules\": {\n                      \"padding-top\": \"0px\",\n                      \"padding-left\": \"0px\",\n                      \"padding-bottom\": \"0px\",\n                      \"padding-right\": \"0px\"\n                    }\n                  },\n                  \"Border\": {\n                    \"Disabled\": false,\n                    \"Inherit\": true,\n                    \"ShowAdv\": false,\n                    \"Size\": 0,\n                    \"Top\": 0,\n                    \"Right\": 0,\n                    \"Bottom\": 0,\n                    \"Left\": 0,\n                    \"Selectors\": [\n                      \".border-container\"\n                    ],\n                    \"Rules\": {\n                      \"border-top\": \"0px\",\n                      \"border-left\": \"0px\",\n                      \"border-bottom\": \"0px\",\n                      \"border-right\": \"0px\",\n                      \"border-color\": \"\",\n                      \"border-style\": \"solid\",\n                      \"padding-top\": \"0px\",\n                      \"padding-left\": \"0px\",\n                      \"padding-bottom\": \"0px\",\n                      \"padding-right\": \"0px\"\n                    }\n                  },\n                  \"Padding\": {\n                    \"Disabled\": false,\n                    \"Inherit\": true,\n                    \"ShowAdv\": false,\n                    \"Size\": \"0\",\n                    \"Top\": \"0\",\n                    \"Right\": \"0\",\n                    \"Bottom\": \"0\",\n                    \"Left\": \"0\",\n                    \"Selectors\": [\n                      \".padding-container\"\n                    ],\n                    \"Rules\": {\n                      \"padding-top\": \"0px\",\n                      \"padding-left\": \"0px\",\n                      \"padding-bottom\": \"0px\",\n                      \"padding-right\": \"0px\"\n                    }\n                  }\n                }\n              },\n              \"Title\": \"Message\",\n              \"IsDefaultMessage\": false,\n              \"Restricted\": 0,\n              \"Visible\": 1,\n              \"Timestamp\": \"2015-09-14 17:32:18\",\n              \"Locked\": 0,\n              \"LockedBy\": \"\",\n              \"Empty\": false,\n              \"Published\": 1\n            }\n          ],\n          \"ContentCount\": 1,\n          \"LayoutDirectory\": \"column0.html\",\n          \"Order\": 0,\n          \"Settings\": {\n            \"Editable\": {\n              \"Disabled\": true,\n              \"Inherit\": false\n            },\n            \"Dimensions\": {\n              \"Width\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"Value\": 600,\n                \"Ratio\": 100\n              },\n              \"Height\": {\n                \"Disabled\": true,\n                \"Inherit\": true,\n                \"Value\": \"\",\n                \"Ratio\": 100\n              }\n            },\n            \"Color\": {\n              \"Disabled\": true,\n              \"Inherit\": false,\n              \"Color\": \"\"\n            },\n            \"Source\": {\n              \"Disabled\": true,\n              \"Inherit\": false,\n              \"Dynamic\": false,\n              \"Src\": \"\",\n              \"SrcFinal\": \"\"\n            },\n            \"Link\": {\n              \"Disabled\": true,\n              \"Inherit\": false,\n              \"ShowAdv\": false,\n              \"Url\": \"\",\n              \"Target\": \"\",\n              \"Title\": \"\"\n            },\n            \"Align\": {\n              \"Disabled\": false,\n              \"Inherit\": true,\n              \"Align\": \"left\"\n            },\n            \"Font\": {\n              \"Disabled\": false,\n              \"ShowAdv\": false\n            },\n            \"FontColor\": {\n              \"Disabled\": false,\n              \"Inherit\": true,\n              \"Color\": \"#000000\"\n            },\n            \"FontFamily\": {\n              \"Disabled\": false,\n              \"Inherit\": true,\n              \"Font\": \"Arial,Helvetica Neue,Helvetica,sans-serif\"\n            },\n            \"FontSize\": {\n              \"Disabled\": false,\n              \"Inherit\": true,\n              \"Size\": \"12px\"\n            },\n            \"LineHeight\": {\n              \"Disabled\": false,\n              \"Inherit\": true,\n              \"Size\": \"auto\"\n            },\n            \"BgColor\": {\n              \"Disabled\": false,\n              \"Inherit\": true,\n              \"Color\": \"#FFFFFF\",\n              \"ShowAdv\": false\n            },\n            \"CanvasColor\": {\n              \"Disabled\": true,\n              \"Inherit\": false,\n              \"Color\": \"#FFFFFF\"\n            },\n            \"HasOwnBoxModel\": {\n              \"Disabled\": false,\n              \"Inherit\": false,\n              \"Value\": false\n            },\n            \"Border\": {\n              \"Disabled\": false,\n              \"Inherit\": false,\n              \"ShowAdv\": false,\n              \"Size\": 0,\n              \"Top\": 0,\n              \"Right\": 0,\n              \"Bottom\": 0,\n              \"Left\": 0,\n              \"Color\": \"\",\n              \"Style\": \"\"\n            },\n            \"Padding\": {\n              \"Disabled\": false,\n              \"Inherit\": false,\n              \"ShowAdv\": false,\n              \"Size\": 0,\n              \"Top\": 0,\n              \"Right\": 0,\n              \"Bottom\": 0,\n              \"Left\": 0\n            },\n            \"Margin\": {\n              \"Disabled\": false,\n              \"Inherit\": false,\n              \"ShowAdv\": false,\n              \"Size\": 0,\n              \"Top\": 0,\n              \"Right\": 0,\n              \"Bottom\": 0,\n              \"Left\": 0\n            },\n            \"Responsive\": {\n              \"Hidden\": {\n                \"Disabled\": false,\n                \"Value\": false,\n                \"Selectors\": [\n                  \"\"\n                ],\n                \"Rules\": {}\n              },\n              \"Dimensions\": {\n                \"Disabled\": false,\n                \"Width\": {\n                  \"Disabled\": false,\n                  \"RzBlock\": true,\n                  \"Width\": \"100\",\n                  \"Selectors\": [\n                    \".content-unit\"\n                  ],\n                  \"Rules\": {\n                    \"width\": \"100%\",\n                    \"min-width\": \"1%\"\n                  }\n                },\n                \"Height\": {\n                  \"Disabled\": true,\n                  \"Inherit\": true,\n                  \"Height\": \"auto\",\n                  \"Selectors\": [\n                    \".content-unit\"\n                  ],\n                  \"Rules\": {\n                    \"height\": \"auto\"\n                  }\n                }\n              },\n              \"FontSize\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"Size\": \"12px\",\n                \"Selectors\": [\n                  \".content-unit\",\n                  \".content-container\"\n                ],\n                \"Rules\": {\n                  \"font-size\": \"12px\"\n                }\n              },\n              \"Align\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"Align\": \"left\",\n                \"Selectors\": [\n                  \".content-unit\",\n                  \".content-container\"\n                ],\n                \"Rules\": {\n                  \"text-align\": \"left\"\n                }\n              },\n              \"Margin\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"ShowAdv\": false,\n                \"Size\": 0,\n                \"Top\": 0,\n                \"Right\": 0,\n                \"Bottom\": 0,\n                \"Left\": 0,\n                \"Selectors\": [\n                  \".margin-container\"\n                ],\n                \"Rules\": {\n                  \"padding-top\": \"0px\",\n                  \"padding-left\": \"0px\",\n                  \"padding-bottom\": \"0px\",\n                  \"padding-right\": \"0px\"\n                }\n              },\n              \"Border\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"ShowAdv\": false,\n                \"Size\": 0,\n                \"Top\": 0,\n                \"Right\": 0,\n                \"Bottom\": 0,\n                \"Left\": 0,\n                \"Selectors\": [\n                  \".border-container\"\n                ],\n                \"Rules\": {\n                  \"border-top\": \"0px\",\n                  \"border-left\": \"0px\",\n                  \"border-bottom\": \"0px\",\n                  \"border-right\": \"0px\",\n                  \"border-color\": \"\",\n                  \"border-style\": \"solid\"\n                }\n              },\n              \"Padding\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"ShowAdv\": false,\n                \"Size\": 0,\n                \"Top\": 0,\n                \"Right\": 0,\n                \"Bottom\": 0,\n                \"Left\": 0,\n                \"Selectors\": [\n                  \".padding-container\"\n                ],\n                \"Rules\": {\n                  \"padding-top\": \"0px\",\n                  \"padding-left\": \"0px\",\n                  \"padding-bottom\": \"0px\",\n                  \"padding-right\": \"0px\"\n                }\n              }\n            }\n          },\n          \"Title\": \"Column\",\n          \"IsDefaultMessage\": false,\n          \"CanBeEdited\": true,\n          \"Locked\": 0,\n          \"LockedBy\": \"\",\n          \"Html\": \"\"\n        }\n      ],\n      \"LayoutDirectory\": \"section0.html\",\n      \"Order\": 1,\n      \"Settings\": {\n        \"Editable\": {\n          \"Disabled\": true,\n          \"Inherit\": false\n        },\n        \"Dimensions\": {\n          \"Width\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"Value\": 600,\n            \"Ratio\": 100\n          },\n          \"Height\": {\n            \"Disabled\": true,\n            \"Inherit\": true,\n            \"Value\": \"\",\n            \"Ratio\": 100\n          }\n        },\n        \"Color\": {\n          \"Disabled\": true,\n          \"Inherit\": false,\n          \"Color\": \"\"\n        },\n        \"Source\": {\n          \"Disabled\": true,\n          \"Inherit\": false,\n          \"Dynamic\": false,\n          \"Src\": \"\",\n          \"SrcFinal\": \"\"\n        },\n        \"Link\": {\n          \"Disabled\": true,\n          \"Inherit\": false,\n          \"ShowAdv\": false,\n          \"Url\": \"\",\n          \"Target\": \"\",\n          \"Title\": \"\"\n        },\n        \"Align\": {\n          \"Disabled\": false,\n          \"Inherit\": true,\n          \"Align\": \"left\"\n        },\n        \"Font\": {\n          \"Disabled\": false,\n          \"ShowAdv\": false\n        },\n        \"FontColor\": {\n          \"Disabled\": false,\n          \"Inherit\": true,\n          \"Color\": \"#000000\"\n        },\n        \"FontFamily\": {\n          \"Disabled\": false,\n          \"Inherit\": true,\n          \"Font\": \"Arial,Helvetica Neue,Helvetica,sans-serif\"\n        },\n        \"FontSize\": {\n          \"Disabled\": false,\n          \"Inherit\": true,\n          \"Size\": \"12px\"\n        },\n        \"LineHeight\": {\n          \"Disabled\": false,\n          \"Inherit\": true,\n          \"Size\": \"auto\"\n        },\n        \"BgColor\": {\n          \"Disabled\": false,\n          \"Inherit\": true,\n          \"Color\": \"#FFFFFF\",\n          \"ShowAdv\": false\n        },\n        \"CanvasColor\": {\n          \"Disabled\": true,\n          \"Inherit\": false,\n          \"Color\": \"#FFFFFF\"\n        },\n        \"HasOwnBoxModel\": {\n          \"Disabled\": false,\n          \"Inherit\": false,\n          \"Value\": false\n        },\n        \"Border\": {\n          \"Disabled\": false,\n          \"Inherit\": false,\n          \"ShowAdv\": false,\n          \"Size\": 0,\n          \"Top\": 0,\n          \"Right\": 0,\n          \"Bottom\": 0,\n          \"Left\": 0,\n          \"Color\": \"\",\n          \"Style\": \"\"\n        },\n        \"Padding\": {\n          \"Disabled\": false,\n          \"Inherit\": false,\n          \"ShowAdv\": false,\n          \"Size\": 0,\n          \"Top\": 0,\n          \"Right\": 0,\n          \"Bottom\": 0,\n          \"Left\": 0\n        },\n        \"Margin\": {\n          \"Disabled\": false,\n          \"Inherit\": false,\n          \"ShowAdv\": false,\n          \"Size\": 0,\n          \"Top\": 0,\n          \"Right\": 0,\n          \"Bottom\": 0,\n          \"Left\": 0\n        },\n        \"Responsive\": {\n          \"Hidden\": {\n            \"Disabled\": false,\n            \"Value\": false,\n            \"Selectors\": [\n              \"\"\n            ],\n            \"Rules\": {}\n          },\n          \"Dimensions\": {\n            \"Disabled\": false,\n            \"Width\": {\n              \"Disabled\": false,\n              \"RzBlock\": true,\n              \"Width\": \"100\",\n              \"Selectors\": [\n                \".content-unit\"\n              ],\n              \"Rules\": {\n                \"width\": \"100%\",\n                \"min-width\": \"1%\"\n              }\n            },\n            \"Height\": {\n              \"Disabled\": true,\n              \"Inherit\": true,\n              \"Height\": \"auto\",\n              \"Selectors\": [\n                \".content-unit\"\n              ],\n              \"Rules\": {\n                \"height\": \"auto\"\n              }\n            }\n          },\n          \"FontSize\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"Size\": \"12px\",\n            \"Selectors\": [\n              \".content-unit\",\n              \".content-container\"\n            ],\n            \"Rules\": {\n              \"font-size\": \"12px\"\n            }\n          },\n          \"Align\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"Align\": \"left\",\n            \"Selectors\": [\n              \".content-unit\",\n              \".content-container\"\n            ],\n            \"Rules\": {\n              \"text-align\": \"left\"\n            }\n          },\n          \"Margin\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"ShowAdv\": false,\n            \"Size\": 0,\n            \"Top\": 0,\n            \"Right\": 0,\n            \"Bottom\": 0,\n            \"Left\": 0,\n            \"Selectors\": [\n              \".margin-container\"\n            ],\n            \"Rules\": {\n              \"padding-top\": \"0px\",\n              \"padding-left\": \"0px\",\n              \"padding-bottom\": \"0px\",\n              \"padding-right\": \"0px\"\n            }\n          },\n          \"Border\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"ShowAdv\": false,\n            \"Size\": 0,\n            \"Top\": 0,\n            \"Right\": 0,\n            \"Bottom\": 0,\n            \"Left\": 0,\n            \"Selectors\": [\n              \".border-container\"\n            ],\n            \"Rules\": {\n              \"border-top\": \"0px\",\n              \"border-left\": \"0px\",\n              \"border-bottom\": \"0px\",\n              \"border-right\": \"0px\",\n              \"border-color\": \"\",\n              \"border-style\": \"solid\"\n            }\n          },\n          \"Padding\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"ShowAdv\": false,\n            \"Size\": 0,\n            \"Top\": 0,\n            \"Right\": 0,\n            \"Bottom\": 0,\n            \"Left\": 0,\n            \"Selectors\": [\n              \".padding-container\"\n            ],\n            \"Rules\": {\n              \"padding-top\": \"0px\",\n              \"padding-left\": \"0px\",\n              \"padding-bottom\": \"0px\",\n              \"padding-right\": \"0px\"\n            }\n          }\n        }\n      },\n      \"Title\": \"1 Column\",\n      \"ColumnCount\": 1,\n      \"ContentCount\": 1,\n      \"IsDefaultMessage\": false,\n      \"Timestamp\": null,\n      \"Html\": \"\",\n      \"Restricted\": 0,\n      \"Visible\": 1,\n      \"Locked\": 0,\n      \"LockedBy\": \"\",\n      \"Published\": 1,\n      \"Draft\": {\n        \"Columns\": [\n          {\n            \"Id\": 0,\n            \"Contents\": [],\n            \"ContentCount\": 0,\n            \"LayoutDirectory\": \"column0.html\",\n            \"Order\": 0,\n            \"Settings\": {\n              \"Editable\": {\n                \"Disabled\": true,\n                \"Inherit\": false\n              },\n              \"Dimensions\": {\n                \"Width\": {\n                  \"Disabled\": false,\n                  \"Inherit\": true,\n                  \"Value\": 600,\n                  \"Ratio\": 100\n                },\n                \"Height\": {\n                  \"Disabled\": true,\n                  \"Inherit\": true,\n                  \"Value\": \"\",\n                  \"Ratio\": 100\n                }\n              },\n              \"Color\": {\n                \"Disabled\": true,\n                \"Inherit\": false,\n                \"Color\": \"\"\n              },\n              \"Source\": {\n                \"Disabled\": true,\n                \"Inherit\": false,\n                \"Src\": \"\"\n              },\n              \"Align\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"Align\": \"left\"\n              },\n              \"Font\": {\n                \"Disabled\": false,\n                \"ShowAdv\": false\n              },\n              \"FontColor\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"Color\": \"#000000 \"\n              },\n              \"FontFamily\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"Font\": \"Arial,'Helvetica Neue',Helvetica,sans-serif\"\n              },\n              \"FontSize\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"Size\": \"12px\"\n              },\n              \"LineHeight\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"Size\": \"20px\"\n              },\n              \"BgColor\": {\n                \"Disabled\": false,\n                \"Inherit\": true,\n                \"ShowAdv\": false,\n                \"Color\": \"#FFFFFF \"\n              },\n              \"Border\": {\n                \"Disabled\": false,\n                \"Inherit\": false,\n                \"ShowAdv\": false,\n                \"Size\": 0,\n                \"Top\": 0,\n                \"Right\": 0,\n                \"Bottom\": 0,\n                \"Left\": 0,\n                \"Color\": \"\",\n                \"Style\": \"\"\n              },\n              \"Padding\": {\n                \"Disabled\": false,\n                \"Inherit\": false,\n                \"ShowAdv\": false,\n                \"Size\": 0,\n                \"Top\": 0,\n                \"Right\": 0,\n                \"Bottom\": 0,\n                \"Left\": 0\n              },\n              \"Margin\": {\n                \"Disabled\": false,\n                \"Inherit\": false,\n                \"ShowAdv\": false,\n                \"Size\": 0,\n                \"Top\": 0,\n                \"Right\": 0,\n                \"Bottom\": 0,\n                \"Left\": 0\n              }\n            },\n            \"Title\": \"Column\",\n            \"Html\": \"\"\n          }\n        ],\n        \"LayoutDirectory\": \"section0.html\",\n        \"Settings\": {\n          \"Editable\": {\n            \"Disabled\": true,\n            \"Inherit\": false\n          },\n          \"Dimensions\": {\n            \"Width\": {\n              \"Disabled\": false,\n              \"Inherit\": true,\n              \"Value\": \"600\",\n              \"Ratio\": 100\n            },\n            \"Height\": {\n              \"Disabled\": true,\n              \"Inherit\": true,\n              \"Value\": \"\",\n              \"Ratio\": 100\n            }\n          },\n          \"Color\": {\n            \"Disabled\": true,\n            \"Inherit\": false,\n            \"Color\": \"\"\n          },\n          \"Source\": {\n            \"Disabled\": true,\n            \"Inherit\": false,\n            \"Src\": \"\"\n          },\n          \"Align\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"Align\": \"left\"\n          },\n          \"Font\": {\n            \"Disabled\": false,\n            \"ShowAdv\": true\n          },\n          \"FontColor\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"Color\": \"#000000 \"\n          },\n          \"FontFamily\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"Font\": \"Arial,'Helvetica Neue',Helvetica,sans-serif\"\n          },\n          \"FontSize\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"Size\": \"12px\"\n          },\n          \"LineHeight\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"Size\": \"20px\"\n          },\n          \"BgColor\": {\n            \"Disabled\": false,\n            \"Inherit\": true,\n            \"ShowAdv\": false,\n            \"Color\": \"#FFFFFF \"\n          },\n          \"Border\": {\n            \"Disabled\": false,\n            \"Inherit\": false,\n            \"ShowAdv\": false,\n            \"Size\": 0,\n            \"Top\": 0,\n            \"Right\": 0,\n            \"Bottom\": 0,\n            \"Left\": 0,\n            \"Color\": \"\",\n            \"Style\": \"\"\n          },\n          \"Padding\": {\n            \"Disabled\": false,\n            \"Inherit\": false,\n            \"ShowAdv\": false,\n            \"Size\": 0,\n            \"Top\": 0,\n            \"Right\": 0,\n            \"Bottom\": 0,\n            \"Left\": 0\n          },\n          \"Margin\": {\n            \"Disabled\": false,\n            \"Inherit\": false,\n            \"ShowAdv\": false,\n            \"Size\": 0,\n            \"Top\": 0,\n            \"Right\": 0,\n            \"Bottom\": 0,\n            \"Left\": 0\n          }\n        },\n        \"ColumnCount\": 1,\n        \"ContentCount\": 0,\n        \"Html\": \"\"\n      }\n    }\n  ],\n  \"Settings\": {\n    \"Editable\": {\n      \"Disabled\": true,\n      \"Inherit\": false\n    },\n    \"Dimensions\": {\n      \"Width\": {\n        \"Disabled\": false,\n        \"Inherit\": true,\n        \"Value\": \"600\",\n        \"Ratio\": 100\n      },\n      \"Height\": {\n        \"Disabled\": true,\n        \"Inherit\": true,\n        \"Value\": \"\",\n        \"Ratio\": 100\n      }\n    },\n    \"Color\": {\n      \"Disabled\": true,\n      \"Inherit\": false,\n      \"Color\": \"#000000\"\n    },\n    \"Source\": {\n      \"Disabled\": true,\n      \"Inherit\": false,\n      \"Dynamic\": false,\n      \"Src\": \"\",\n      \"SrcFinal\": \"\"\n    },\n    \"Link\": {\n      \"Disabled\": true,\n      \"Inherit\": false,\n      \"ShowAdv\": false,\n      \"Url\": \"\",\n      \"Target\": \"\",\n      \"Title\": \"\"\n    },\n    \"Align\": {\n      \"Disabled\": false,\n      \"Inherit\": false,\n      \"Align\": \"left\"\n    },\n    \"Font\": {\n      \"Disabled\": false,\n      \"ShowAdv\": false\n    },\n    \"FontColor\": {\n      \"Disabled\": false,\n      \"Inherit\": true,\n      \"Color\": \"#000000\"\n    },\n    \"FontFamily\": {\n      \"Disabled\": false,\n      \"Inherit\": true,\n      \"Font\": \"Arial,Helvetica Neue,Helvetica,sans-serif\"\n    },\n    \"FontSize\": {\n      \"Disabled\": false,\n      \"Inherit\": true,\n      \"Size\": \"12px\"\n    },\n    \"LineHeight\": {\n      \"Disabled\": false,\n      \"Inherit\": true,\n      \"Size\": \"auto\"\n    },\n    \"BgColor\": {\n      \"Disabled\": false,\n      \"Inherit\": true,\n      \"Color\": \"#FFFFFF\"\n    },\n    \"CanvasColor\": {\n      \"Disabled\": true,\n      \"Inherit\": false,\n      \"Color\": \"#FFFFFF\"\n    },\n    \"HasOwnBoxModel\": {\n      \"Disabled\": false,\n      \"Inherit\": false,\n      \"Value\": false\n    },\n    \"Border\": {\n      \"Disabled\": false,\n      \"Inherit\": false,\n      \"ShowAdv\": false,\n      \"Size\": 0,\n      \"Top\": 0,\n      \"Right\": 0,\n      \"Bottom\": 0,\n      \"Left\": 0,\n      \"Color\": \"#CCCCCC\",\n      \"Style\": \"solid\"\n    },\n    \"Padding\": {\n      \"Disabled\": false,\n      \"Inherit\": false,\n      \"ShowAdv\": false,\n      \"Size\": 0,\n      \"Top\": 0,\n      \"Right\": 0,\n      \"Bottom\": 0,\n      \"Left\": 0\n    },\n    \"Margin\": {\n      \"Disabled\": false,\n      \"Inherit\": false,\n      \"ShowAdv\": false,\n      \"Size\": 0,\n      \"Top\": 0,\n      \"Right\": 0,\n      \"Bottom\": 0,\n      \"Left\": 0\n    },\n    \"Responsive\": {\n      \"Hidden\": {\n        \"Disabled\": false,\n        \"Value\": false,\n        \"Selectors\": [\n          \"\"\n        ],\n        \"Rules\": {}\n      },\n      \"Dimensions\": {\n        \"Disabled\": false,\n        \"Width\": {\n          \"Disabled\": false,\n          \"RzBlock\": true,\n          \"Width\": \"100\",\n          \"Selectors\": [\n            \".content-unit\"\n          ],\n          \"Rules\": {\n            \"width\": \"100%\",\n            \"min-width\": \"1%\"\n          }\n        },\n        \"Height\": {\n          \"Disabled\": true,\n          \"Inherit\": true,\n          \"Height\": \"auto\",\n          \"Selectors\": [\n            \".content-unit\"\n          ],\n          \"Rules\": {\n            \"height\": \"auto\"\n          }\n        }\n      },\n      \"FontSize\": {\n        \"Disabled\": false,\n        \"Inherit\": true,\n        \"Size\": \"12px\",\n        \"Selectors\": [\n          \".content-unit\",\n          \".content-container\"\n        ],\n        \"Rules\": {\n          \"font-size\": \"12px\"\n        }\n      },\n      \"Align\": {\n        \"Disabled\": false,\n        \"Inherit\": true,\n        \"Align\": \"left\",\n        \"Selectors\": [\n          \".content-unit\",\n          \".content-container\"\n        ],\n        \"Rules\": {\n          \"text-align\": \"left\"\n        },\n        \"RuleName\": \"text-align\",\n        \"RuleValue\": \"center\"\n      },\n      \"Margin\": {\n        \"Disabled\": false,\n        \"Inherit\": true,\n        \"ShowAdv\": false,\n        \"Size\": 0,\n        \"Top\": 0,\n        \"Right\": 0,\n        \"Bottom\": 0,\n        \"Left\": 0,\n        \"Selectors\": [\n          \".margin-container\"\n        ],\n        \"Rules\": {\n          \"padding-top\": \"0px\",\n          \"padding-left\": \"0px\",\n          \"padding-bottom\": \"0px\",\n          \"padding-right\": \"0px\"\n        }\n      },\n      \"Border\": {\n        \"Disabled\": false,\n        \"Inherit\": true,\n        \"ShowAdv\": false,\n        \"Size\": 0,\n        \"Top\": 0,\n        \"Right\": 0,\n        \"Bottom\": 0,\n        \"Left\": 0,\n        \"Selectors\": [\n          \".border-container\"\n        ],\n        \"Rules\": {\n          \"border-top\": \"0px\",\n          \"border-left\": \"0px\",\n          \"border-bottom\": \"0px\",\n          \"border-right\": \"0px\",\n          \"border-color\": \"#CCCCCC\",\n          \"border-style\": \"solid\"\n        }\n      },\n      \"Padding\": {\n        \"Disabled\": false,\n        \"Inherit\": true,\n        \"ShowAdv\": false,\n        \"Size\": 0,\n        \"Top\": 0,\n        \"Right\": 0,\n        \"Bottom\": 0,\n        \"Left\": 0,\n        \"Selectors\": [\n          \".padding-container\"\n        ],\n        \"Rules\": {\n          \"padding-top\": \"0px\",\n          \"padding-left\": \"0px\",\n          \"padding-bottom\": \"0px\",\n          \"padding-right\": \"0px\"\n        }\n      }\n    }\n  }\n}",
+			"settings":
+			{
+				"buffer_size": 54297,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mattdaisley/rezora/newsletters/2233/template.html",
+			"settings":
+			{
+				"buffer_size": 16561,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/mattdaisley/rezora/newsletters/p2720/template.html",
+			"settings":
+			{
+				"buffer_size": 6640,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "code/public/app/src/Template/TemplateController.js",
+			"settings":
+			{
+				"buffer_size": 4984,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "code/public/app/src/Template/BuildDomService.js",
+			"settings":
+			{
+				"buffer_size": 5595,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "code/public/app/src/Template/SettingsTestService.js",
+			"settings":
+			{
+				"buffer_size": 9580,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\n\n  Tests.prototype.borderTest = function() {\n    // use the cached test result if it exists\n    if ( this.Results.Border ) return this.Results.Border;\n\n    // run the test\n    if ( this.Settings.hasOwnProperty('Border') ) {\n      var Border = this.Settings.Border;\n      if ( Border.hasOwnProperty('Size') ) {\n        if ( Border.Size > 0 || this.borderTopTest() || this.borderRightTest() || this.borderBottomTest() || this.borderLeftTest() ) {\n          // cache the result\n          this.Results.Border = true;\n          return true;\n        }\n      }\n    }\n    //cache the result\n    this.Results.Border = false;\n    return false;\n  };\n\n  Tests.prototype.borderTopTest = function() {\n    // use the cached test result if it exists\n    if ( this.Results.BorderTop ) return this.Results.BorderTop;\n\n    // run the test\n    if ( this.Settings.hasOwnProperty('Border') ) {\n      var Border = this.Settings.Border;\n      if ( Border.hasOwnProperty('Top') ) {\n        if ( Border.Top > 0 ) {\n          // cache the result\n          this.Results.BorderTop = true;\n          return true;\n        }\n      }\n    }\n  };\n\n  Tests.prototype.borderRightTest = function() {\n    // use the cached test result if it exists\n    if ( this.Results.BorderRight ) return this.Results.BorderRight;\n\n    // run the test\n    if ( this.Settings.hasOwnProperty('Border') ) {\n      var Border = this.Settings.Border;\n      if ( Border.hasOwnProperty('Right') ) {\n        if ( Border.Right > 0 ) {\n          // cache the result\n          this.Results.BorderRight = true;\n          return true;\n        }\n      }\n    }\n    //cache the result\n    this.Results.BorderRight = false;\n    return false;\n  };\n\n  Tests.prototype.borderBottomTest = function() {\n    // use the cached test result if it exists\n    if ( this.Results.BorderBottom ) return this.Results.BorderBottom;\n\n    // run the test\n    if ( this.Settings.hasOwnProperty('Border') ) {\n      var Border = this.Settings.Border;\n      if ( Border.hasOwnProperty('Bottom') ) {\n        if ( Border.Bottom > 0 ) {\n          // cache the result\n          this.Results.BorderBottom = true;\n          return true;\n        }\n      }\n    }\n    //cache the result\n    this.Results.BorderBottom = false;\n    return false;\n  };\n\n  Tests.prototype.borderLeftTest = function() {\n    // use the cached test result if it exists\n    if ( this.Results.BorderLeft ) return this.Results.BorderLeft;\n\n    // run the test\n    if ( this.Settings.hasOwnProperty('Border') ) {\n      var Border = this.Settings.Border;\n      if ( Border.hasOwnProperty('Left') ) {\n        if ( Border.Left > 0 ) {\n          // cache the result\n          this.Results.BorderLeft = true;\n          return true;\n        }\n      }\n    }\n    //cache the result\n    this.Results.BorderLeft = false;\n    return false;\n  };",
+			"settings":
+			{
+				"buffer_size": 2804,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "code/materials-app.js",
+			"settings":
+			{
+				"buffer_size": 1469,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "code/package.json",
+			"settings":
+			{
+				"buffer_size": 643,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mattdaisley/.pm2/logs/materials-app-out-0.log",
+			"settings":
+			{
+				"buffer_size": 15,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mattdaisley/.pm2/logs/materials-app-error-0.log",
+			"settings":
+			{
+				"buffer_size": 84303,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "code/public/app/src/Template/TemplateService.js",
+			"settings":
+			{
+				"buffer_size": 3486,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\">                         \n	<tbody>\n		<tr>                          \n			<td align=\"center\" valign=\"top\" id=\"clm-0-0\">                          \n				<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" class=\"cnt-0-0-0-ctr\">\n					<tr class=\"rzHide\">\n						<td style=\"font-size:0px; line-height:0px;\" height=\"10\" colspan=\"3\">\n							<div style=\"font-size:0px; line-height:0px;\">\n								<img src=\"http://app.rezora.com/themes/default/images/spacer.gif\" border=\"0\" style=\"display:block;\" height=\"10\" width=\"1\">\n							</div>\n						</td>\n					</tr>\n					<tr>\n						<td style=\"font-size:0px; line-height:0px;\" width=\"10\" class=\"rzHide\">\n							<div style=\"font-size:0px; line-height:0px;\">\n								<img src=\"http://app.rezora.com/themes/default/images/spacer.gif\" border=\"0\" style=\"display:block;\" width=\"1\">\n							</div>\n						</td>\n						<td class=\"margin-container\">\n							<div>\n								I love cheese, especially airedale queso. Cheese and biscuits halloumi cauliflower cheese cottage cheese swiss boursin fondue caerphilly. Cow port-salut camembert de normandie macaroni cheese feta who moved my cheese babybel boursin. Red leicester roquefort boursin squirty cheese jarlsberg blue castello caerphilly chalk and cheese. Lancashire.\n							</div>\n						</td>\n						<td style=\"font-size:0px; line-height:0px;\" width=\"10\" class=\"rzHide\">\n							<div style=\"font-size:0px; line-height:0px;\">\n								<img src=\"http://app.rezora.com/themes/default/images/spacer.gif\" border=\"0\" style=\"display:block;\" width=\"1\">\n							</div>\n						</td>\n					</tr>\n					<tr class=\"rzHide\">\n						<td style=\"font-size:0px; line-height:0px;\" height=\"10\" colspan=\"3\">\n							<div style=\"font-size:0px; line-height:0px;\">\n								<img src=\"http://app.rezora.com/themes/default/images/spacer.gif\" border=\"0\" style=\"display:block;\" height=\"10\" width=\"1\">\n							</div>\n						</td>\n					</tr>\n				</table>\n			</td>                          \n			<td align=\"center\" valign=\"top\" id=\"clm-0-1\">                          \n				<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\">\n					<tr class=\"rzHide\">\n						<td style=\"font-size:0px; line-height:0px;\" height=\"10\" colspan=\"3\">\n							<div style=\"font-size:0px; line-height:0px;\">\n								<img src=\"http://app.rezora.com/themes/default/images/spacer.gif\" border=\"0\" style=\"display:block;\" height=\"10\" width=\"1\">\n							</div>\n						</td>\n					</tr>\n					<tr>\n						<td style=\"font-size:0px; line-height:0px;\" width=\"10\" class=\"rzHide\">\n							<div style=\"font-size:0px; line-height:0px;\">\n								<img src=\"http://app.rezora.com/themes/default/images/spacer.gif\" border=\"0\" style=\"display:block;\" width=\"1\">\n							</div>\n						</td>\n						<td>\n							<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\">\n								<tr>\n									<td style=\"font-size:18px;\">\n										<div>\n											I love cheese, especially airedale queso. Cheese and biscuits halloumi cauliflower cheese cottage cheese swiss boursin fondue caerphilly. Cow port-salut camembert de normandie macaroni cheese feta who moved my cheese babybel boursin. Red leicester roquefort boursin squirty cheese jarlsberg blue castello caerphilly chalk and cheese. Lancashire.\n										</div>\n									</td>\n								</tr>\n							</table>\n						</td>\n						<td style=\"font-size:0px; line-height:0px;\" width=\"20\" class=\"rzHide\">\n							<div style=\"font-size:0px; line-height:0px;\">\n								<img src=\"http://app.rezora.com/themes/default/images/spacer.gif\" border=\"0\" style=\"display:block;\" width=\"1\">\n							</div>\n						</td>\n					</tr>\n					<tr class=\"rzHide\">\n						<td style=\"font-size:0px; line-height:0px;\" height=\"20\" colspan=\"3\">\n							<div style=\"font-size:0px; line-height:0px;\">\n								<img src=\"http://app.rezora.com/themes/default/images/spacer.gif\" border=\"0\" style=\"display:block;\" height=\"20\" width=\"1\">\n							</div>\n						</td>\n					</tr>\n				</table>\n				<div style=\"border-top:5px solid #000000;border-right:2px solid #000000;border-bottom:5px solid #000000;border-left:2px solid #000000;border-color:#000000;\">\n					<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\">\n						<tr>\n							<td align=\"left\" style=\"text-align:left;\">\n								<div>\n									I love cheese, especially airedale queso. Cheese and biscuits halloumi cauliflower cheese cottage cheese swiss boursin fondue caerphilly. Cow port-salut camembert de normandie macaroni cheese feta who moved my cheese babybel boursin. Red leicester roquefort boursin squirty cheese jarlsberg blue castello caerphilly chalk and cheese. Lancashire.\n								</div>\n							</td>\n						</tr>\n					</table>\n				</div>\n			</td>                        \n		</tr>                       \n	</tbody>\n</table>",
+			"settings":
+			{
+				"buffer_size": 4818,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "code/public/app/assets/app.css",
+			"settings":
+			{
+				"buffer_size": 1865,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/mattdaisley/rezora/newsletters/107338/content-rules.html",
+			"settings":
+			{
+				"buffer_size": 624,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 187.0,
+		"last_filter": "html",
+		"selected_items":
+		[
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"packin",
+				"Package Control: Install Package"
+			],
+			[
+				"wo",
+				"Word Wrap: Toggle"
+			],
+			[
+				"packconin",
+				"Package Control: Install Package"
+			],
+			[
+				"ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"wor",
+				"Word Wrap: Toggle"
+			],
+			[
+				"jso",
+				"JSON Reindent: reindent file or selection"
+			],
+			[
+				"hml",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"enc",
+				"HTML: Encode Special Characters"
+			],
+			[
+				"packcon",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/mattdaisley/material-start",
+		"/Users/mattdaisley/material-start/code"
+	],
+	"file_history":
+	[
+		"/Users/mattdaisley/.pm2/logs/materials-app-out-0.log",
+		"/Users/mattdaisley/.pm2/logs/materials-app-error-0.log",
+		"/Users/mattdaisley/material-start/code/public/app/src/Template/DomElementsService.js",
+		"/Users/mattdaisley/material-start/code/public/app/src/users/BuildDomService.js",
+		"/Users/mattdaisley/rezora/newsletters/p2720/template.html",
+		"/Users/mattdaisley/material-start/code/routes/api/v1/users/usersSpec.js",
+		"/Users/mattdaisley/material-start/code/routes/api/v1/apiEndpointSpec.js",
+		"/Users/mattdaisley/material-start/code/package.json",
+		"/Users/mattdaisley/material-start/code/public/app/src/users/UserController.js",
+		"/Users/mattdaisley/material-start/README.md",
+		"/Users/mattdaisley/material-start/code/public/app/index.html",
+		"/Users/mattdaisley/.pm2/logs/app-error-1.log",
+		"/Users/mattdaisley/material-start/code/routes/api/v1/api.js",
+		"/Users/mattdaisley/material-start/code/materials-app.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/db/db.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/db/buildQuery.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/routes/api/v1/webtraffic/LogEntry.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/routes/api/v1/api.js",
+		"/Users/mattdaisley/.pm2/logs/app-out-0.log",
+		"/Users/mattdaisley/www.mattdaisley.com/code/routes/api/v1/employees/employees.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/routes/api/v1/users/users.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/routes/api/v1/webtraffic/logger.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/routes/api/v1/users/usersEndpointSpec.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/home-md.html",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/footer.html",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/nav.html",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/index.html",
+		"/Users/mattdaisley/www.mattdaisley.com/code/routes/api/v1/users/usersSpec.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/routes/api/v1/apiEndpointSpec.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/js/appRoutes.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/js/app.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/js/webtraffic/WebtrafficService.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/js/webtraffic/WebtrafficController.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/package.json",
+		"/Users/mattdaisley/www.mattdaisley.com/code/app.js",
+		"/Users/mattdaisley/.pm2/logs/app-error-0.log",
+		"/Users/mattdaisley/www.mattdaisley.com/code/spec/v1/users/UsersSpec.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/spec/apiSpec.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/spec/v1/users/apiUsersSpec.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/routes/api/v1/lifx/lifx.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/routes/facebook/fb.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/vision/testing.html",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/home.html",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/js/webtraffic/allWebtraffic.html",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/css/styles.css",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/js/webtraffic/allWebtraffic.search.html",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/js/webtraffic/allWebtraffic.list.html",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/js/webtraffic/webtraffic.html",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/Tiger/tiger.html",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/js/motion/motionController.js",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/js/motion/motion.html",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/signup.html",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/signin.html",
+		"/Users/mattdaisley/www.mattdaisley.com/.gitignore",
+		"/Users/mattdaisley/www.mattdaisley.com/.git/.gitignore",
+		"/Users/mattdaisley/www.mattdaisley.com/code/.gitignore",
+		"/usr/local/mysql-5.7.12-osx10.11-x86_64/bin/.bash_profile",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/tiger/index.html",
+		"/Users/mattdaisley/www.mattdaisley.com/code/public/tiger/images/Snapchat-2385832001250833899.jpg",
+		"/Users/mattdaisley/mattdaisley/Object_Oriented_Javascript/frontend-nanodegree-arcade-game/js/engine.js",
+		"/Users/mattdaisley/mattdaisley/Object_Oriented_Javascript/frontend-nanodegree-arcade-game/js/app.js",
+		"/Users/mattdaisley/mattdaisley/Object_Oriented_Javascript/frontend-nanodegree-arcade-game/images/char-horn-girl.png",
+		"/etc/hosts",
+		"/Users/mattdaisley/rezora/newsletters/p2728/template.html",
+		"/Users/mattdaisley/rezora/newsletters/p2727/template.html",
+		"/Users/mattdaisley/rezora/newsletters/p2726/template.html",
+		"/Users/mattdaisley/rezora/newsletters/2361/template.html",
+		"/Users/mattdaisley/rezora/newsletters/nylibor_residential.txt",
+		"/Users/mattdaisley/www.rezora.com/marketing_create_listings.php",
+		"/Users/mattdaisley/www.rezora.com/crmTesting.php",
+		"/Users/mattdaisley/rezora/newsletters/s1543/template.html",
+		"/Users/mattdaisley/www.rezora.com/includes/newsletters.php",
+		"/Users/mattdaisley/rezora/newsletters/nrt.json",
+		"/Users/mattdaisley/www.rezora.com/includes/tinymce/plugins/moxiemanager/config.php",
+		"/Users/mattdaisley/www.rezora.com/sso/md5_v2/consume.php",
+		"/Users/mattdaisley/rezora/newsletters/s1660/default_message.html",
+		"/Users/mattdaisley/rezora/newsletters/2362/template.html",
+		"/Users/mattdaisley/www.rezora.com/marketing_list_completed.php",
+		"/Users/mattdaisley/www.rezora.com/dashboard.php",
+		"/Users/mattdaisley/rezora/newsletters/1919/template_2_2.html",
+		"/Users/mattdaisley/rezora/newsletters/1919/template_1_2.html",
+		"/Users/mattdaisley/rezora/newsletters/1919/template.html",
+		"/Users/mattdaisley/rezora/newsletters/s1677/template.html",
+		"/Users/mattdaisley/rezora/newsletters/s1678/template.html",
+		"/Users/mattdaisley/rezora/newsletters/s1679/template.html",
+		"/Users/mattdaisley/rezora/newsletters/s1678/default_content.html",
+		"/Users/mattdaisley/rezora/newsletters/s1679/default_content.html",
+		"/Users/mattdaisley/rezora/newsletters/2359/template.html",
+		"/Users/mattdaisley/rezora/newsletters/2360/template.html",
+		"/Users/mattdaisley/www.rezora.com/create_displayad.php",
+		"/Users/mattdaisley/rezora/newsletters/2363/template.html",
+		"/Users/mattdaisley/rezora/newsletters/2362/default_content.html",
+		"/Users/mattdaisley/rezora/newsletters/2361/default_content.html",
+		"/Users/mattdaisley/rezora/newsletters/2360/default_content.html",
+		"/Users/mattdaisley/rezora/newsletters/s1680/default_content.html",
+		"/Users/mattdaisley/rezora/newsletters/2105/template.html",
+		"/Users/mattdaisley/rezora/newsletters/1780/template.html",
+		"/Users/mattdaisley/Library/Application Support/Sublime Text 3/Packages/User/listing/listing1292.sublime-snippet",
+		"/Users/mattdaisley/www.rezora.com/scripts/matt/TemplateConnectionService.js",
+		"/Users/mattdaisley/www.rezora.com/matt.php",
+		"/Users/mattdaisley/www.rezora.com/templateBuilder/public/TemplateApp.html",
+		"/Users/mattdaisley/rezora/newsletters/s1677/default_content.html",
+		"/Users/mattdaisley/rezora/newsletters/1919/template_2.html",
+		"/Users/mattdaisley/www.rezora.com/dashboard_recentactivity.php",
+		"/Users/mattdaisley/www.rezora.com/dashboard_clientactivity.php",
+		"/Users/mattdaisley/rezora/newsletters/1110/template.html",
+		"/Users/mattdaisley/www.rezora.com/amember/plugins/protect/plugin_template/rezora.inc.php",
+		"/Users/mattdaisley/www.rezora.com/amember/plugins/protect/rezora/rezora.inc.php",
+		"/Users/mattdaisley/rezora/newsletters/s1118/template.html",
+		"/Users/mattdaisley/rezora/newsletters/p2717/template.html",
+		"/Users/mattdaisley/rezora/newsletters/s1676/template.html",
+		"/Users/mattdaisley/rezora/newsletters/s1676/May 2016 Luxury Impression _ Premier Sotheby's International Realty.htm",
+		"/Users/mattdaisley/www.rezora.com/includes/ems/ems_send.php",
+		"/Users/mattdaisley/rezora/newsletters/5536_3301842/output.html",
+		"/Users/mattdaisley/rezora/newsletters/p2723/template.html",
+		"/Users/mattdaisley/rezora/newsletters/s1673/default_content.html",
+		"/Users/mattdaisley/www.rezora.com/admin/master_templates_details.php",
+		"/Users/mattdaisley/www.rezora.com/brand_marketing_details_publish.php",
+		"/Users/mattdaisley/www.rezora.com/admin/templates_details.php",
+		"/Users/mattdaisley/rezora/newsletters/s1675/default_content.html",
+		"/Users/mattdaisley/rezora/newsletters/2354/template.html",
+		"/Users/mattdaisley/rezora/newsletters/2355/template.html",
+		"/Users/mattdaisley/rezora/newsletters/2358/template.html",
+		"/Users/mattdaisley/rezora/newsletters/2357/template.html",
+		"/Users/mattdaisley/rezora/newsletters/2356/template.html",
+		"/Users/mattdaisley/rezora/newsletters/2353/template.html",
+		"/Users/mattdaisley/rezora/newsletters/s1646/template.html",
+		"/Users/mattdaisley/www.rezora.com/amember/admin/config.inc.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/mattdaisley/www.mattdaisley.com",
+			"/Users/mattdaisley/www.rezora.com",
+			"/Users/mattdaisley/www.rezora.com/scripts/matt",
+			"/Users/mattdaisley/rezora/Misc Files/rezora-matt-components",
+			"/Users/mattdaisley/www.rezora.com/scripts/matt",
+			"/Users/mattdaisley/www.rezora.com",
+			"/Users/mattdaisley/www.rezora.com/scripts/matt",
+			"/Users/mattdaisley/www.rezora.com",
+			"/Users/mattdaisley/www.rezora.com/scripts/matt"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"<",
+			"\n",
+			"<",
+			"userService",
+			"users",
+			"contentBuildStack",
+			".elem",
+			"buildStack",
+			"buildInstructions",
+			"Margin",
+			"margin",
+			"marginbottom",
+			",",
+			"Margin",
+			"margin",
+			"buildStack",
+			"\n",
+			"<",
+			"size",
+			"Margin",
+			"margin",
+			"Margin",
+			"margin",
+			"Margin",
+			"margin",
+			"settings",
+			"right",
+			"bottom",
+			"top",
+			"left",
+			"size",
+			"margin",
+			"settings",
+			"margin",
+			"any-r",
+			"responsive",
+			"outer-contain",
+			"<",
+			"</tbody>",
+			"<tbody>",
+			"tbody",
+			"</tbody>",
+			"<tbody>",
+			"<!",
+			"\n",
+			"<",
+			"\n",
+			"<",
+			"\n",
+			"<",
+			"\n",
+			"<",
+			"left",
+			"float",
+			"right",
+			"../node_modules/",
+			"../node_modules",
+			"50",
+			"flex-gt-xs=\"25\"",
+			"xs",
+			"');\n",
+			"searchWebtraffic",
+			"console",
+			"repository",
+			"debugging",
+			"console.",
+			"adduser",
+			"checkPassword",
+			"self",
+			"newUser",
+			"request",
+			"result.response",
+			"resolve",
+			"reject",
+			"err:500",
+			"getuserbyemail",
+			"checkpassword",
+			"logentry",
+			"top",
+			"webtraffic",
+			"response",
+			"body",
+			"self",
+			"timestamp",
+			"`",
+			"`\n",
+			"initi",
+			"snapshot",
+			"( err )",
+			"if(err){",
+			"if(err){ ",
+			"ctx",
+			"employees",
+			"url:",
+			"ctx",
+			"keyCode",
+			"render()",
+			"checkcol",
+			"dt",
+			"@",
+			"http://' . $_SESSION['brokerage_url'] . '",
+			"location: /",
+			"header",
+			"@",
+			"rezora-userfiles-filemanager",
+			"upload.overwir",
+			"autorename",
+			"intSenderID",
+			"intuserid",
+			"row['user_id']",
+			" <span class=\"nl-beds\">",
+			"102548",
+			"clickto",
+			"click",
+			"clickto",
+			" ",
+			"font-family: Georgia,Times,'Times New Roman',serif;",
+			"street",
+			"af9770",
+			"487156",
+			"2160",
+			" style=\"font-size:0px; line-height:0px;\"",
+			"##IMAGEPATH##",
+			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			" style=\"font-size:0px; line-height:0px;\"",
+			"##IMAGEPATH##",
+			"font-size:10px",
+			"_72"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"10196",
+			"##IMAGEPATH##"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 18,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "code/public/app/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1970,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								577,
+								1961
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 159.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/mattdaisley/www.rezora.com/mattRenderHTML.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3625,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3259,
+								3259
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/mattdaisley/www.rezora.com/matt.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11380,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3575,
+								3429
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1084.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "code/public/app/src/Template/UserController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4210,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								44,
+								44
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "code/public/app/src/Template/Template.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 161,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								149,
+								149
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Users/mattdaisley/rezora/newsletters/107338/output.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 31676,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5653,
+								5666
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": false
+						},
+						"translation.x": 588.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 24,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/mattdaisley/rezora/newsletters/107338/no-settings.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7815,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4644,
+								4644
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false,
+							"word_wrap": false
+						},
+						"translation.x": 413.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/Users/mattdaisley/rezora/newsletters/107338/all-settings.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16684,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13014,
+								6941
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false,
+							"word_wrap": false
+						},
+						"translation.x": 130.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/Users/mattdaisley/rezora/newsletters/107338/content-all-settings.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3673,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1682,
+								1682
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 34,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								31,
+								31
+							]
+						],
+						"settings":
+						{
+							"auto_name": "var template = {",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"default_dir": "/Users/mattdaisley/material-start",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/Users/mattdaisley/rezora/newsletters/p2730/template.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5335,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1171,
+								1171
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 54297,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4162,
+								4172
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"default_dir": "/Users/mattdaisley/material-start",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2
+						},
+						"translation.x": 0.0,
+						"translation.y": 619.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/Users/mattdaisley/rezora/newsletters/2233/template.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16561,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2481,
+								2192
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 509.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/Users/mattdaisley/rezora/newsletters/p2720/template.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6640,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4950,
+								4950
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1251.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "code/public/app/src/Template/TemplateController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4984,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								552,
+								552
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "code/public/app/src/Template/BuildDomService.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5595,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								794,
+								794
+							],
+							[
+								833,
+								833
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 18,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "code/public/app/src/Template/SettingsTestService.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9580,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								816,
+								816
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2804,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2804
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"default_dir": "/Users/mattdaisley/material-start",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "code/materials-app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1469,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								384,
+								384
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 27.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "code/package.json",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 643,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
+					"file": "/Users/mattdaisley/.pm2/logs/materials-app-out-0.log",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 21,
+					"file": "/Users/mattdaisley/.pm2/logs/materials-app-error-0.log",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 84303,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9909.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 22,
+					"file": "code/public/app/src/Template/TemplateService.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3486,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2272,
+								2272
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 23,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4818,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4516,
+								4516
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"default_dir": "/Users/mattdaisley/material-start",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2
+						},
+						"translation.x": 0.0,
+						"translation.y": 588.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 24,
+					"file": "code/public/app/assets/app.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1865,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								273,
+								273
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 25,
+					"type": "text"
+				},
+				{
+					"buffer": 25,
+					"file": "/Users/mattdaisley/rezora/newsletters/107338/content-rules.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 624,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								214,
+								214
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Monokai Bright.tmTheme",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 23,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 29.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 88.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "material-start.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"matt.php",
+				"www.rezora.com/matt.php"
+			],
+			[
+				"builddoms",
+				"material-start/code/public/app/src/users/BuildDomService.js"
+			],
+			[
+				"tests",
+				"material-start/code/public/app/src/users/SettingsTestService.js"
+			],
+			[
+				"userser",
+				"material-start/code/public/app/src/users/UserService.js"
+			],
+			[
+				"marketingcretlist",
+				"www.rezora.com/marketing_create_listings.php"
+			],
+			[
+				"crmtest",
+				"www.rezora.com/crmTesting.php"
+			],
+			[
+				"consume",
+				"www.rezora.com/sso/md5_v2/consume.php"
+			],
+			[
+				"tinymceconfig",
+				"www.rezora.com/includes/tinymce/plugins/moxiemanager/config.php"
+			],
+			[
+				"moxieconfig",
+				"www.rezora.com/includes/tinymce/plugins/moxiemanager/config.php"
+			],
+			[
+				"inclnewsl",
+				"www.rezora.com/includes/newsletters.php"
+			],
+			[
+				"createdipsl",
+				"www.rezora.com/create_displayad.php"
+			],
+			[
+				"dashbrece",
+				"www.rezora.com/dashboard_recentactivity.php"
+			],
+			[
+				"dashbo",
+				"www.rezora.com/dashboard.php"
+			],
+			[
+				"dashbaactiv",
+				"www.rezora.com/dashboard_clientactivity.php"
+			],
+			[
+				"marketlistcompl",
+				"www.rezora.com/marketing_list_completed.php"
+			],
+			[
+				"templatepublictemplate.html",
+				"www.rezora.com/templateBuilder/public/TemplateApp.html"
+			],
+			[
+				"matttemplate",
+				"matt/TemplateConnectionService.js"
+			],
+			[
+				"admin/template",
+				"www.rezora.com/admin/templates_details.php"
+			],
+			[
+				"includenewsl",
+				"www.rezora.com/includes/newsletters.php"
+			],
+			[
+				"emssend",
+				"www.rezora.com/includes/ems/ems_send.php"
+			],
+			[
+				"amembrezro",
+				"www.rezora.com/amember/plugins/protect/rezora/rezora.inc.php"
+			],
+			[
+				"rezor.inc",
+				"www.rezora.com/amember/plugins/protect/plugin_template/rezora.inc.php"
+			],
+			[
+				"amemberproterez",
+				"www.rezora.com/amember/plugins/protect/plugin_template/rezora.inc.php"
+			],
+			[
+				"amemberconfig.inc",
+				"www.rezora.com/amember/admin/config.inc.php"
+			],
+			[
+				"brandpublish",
+				"www.rezora.com/brand_marketing_details_publish.php"
+			],
+			[
+				"admintempldet",
+				"www.rezora.com/admin/templates_details.php"
+			],
+			[
+				"adminmastertmepdi",
+				"www.rezora.com/admin/master_templates_details.php"
+			],
+			[
+				"markecretdispl",
+				"www.rezora.com/marketing_create_displayad.php"
+			],
+			[
+				"displayad",
+				"www.rezora.com/create_displayad.php"
+			],
+			[
+				"template.php",
+				"www.rezora.com/themes/default/template.php"
+			],
+			[
+				"myaccou",
+				"www.rezora.com/myaccount.php"
+			],
+			[
+				"forgot.php",
+				"www.rezora.com/forgot.php"
+			],
+			[
+				"adminagentdripas",
+				"www.rezora.com/admin/agent_directory_password.php"
+			],
+			[
+				"listing.clas",
+				"www.rezora.com/includes/classes/MLS/Listing.class.php"
+			],
+			[
+				"listingseardet",
+				"www.rezora.com/listingsearch_details.php"
+			],
+			[
+				"includnewsl",
+				"www.rezora.com/includes/newsletters.php"
+			],
+			[
+				"marketingcretdist",
+				"www.rezora.com/marketing_create_distribute.php"
+			],
+			[
+				"inclunewsl",
+				"www.rezora.com/includes/newsletters.php"
+			],
+			[
+				"emssendsengr",
+				"www.rezora.com/includes/ems/ems_send_sendgrid.php"
+			],
+			[
+				"cronschedul",
+				"www.rezora.com/cron_send_agent_scheduled.php"
+			],
+			[
+				"brokerdetpost",
+				"www.rezora.com/admin/brokerages_details_postcards.php"
+			],
+			[
+				"admin/brokerdeta",
+				"www.rezora.com/admin/brokerages_details.php"
+			],
+			[
+				"api.cl",
+				"www.rezora.com/includes/classes/CloudElements/API.class.php"
+			],
+			[
+				"incnewsl.",
+				"www.rezora.com/includes/newsletters.php"
+			],
+			[
+				"brokercredis",
+				"www.rezora.com/broker_create_distribute.php"
+			],
+			[
+				"contactsfullsoc",
+				"www.rezora.com/contacts_full_social.php"
+			],
+			[
+				"listing.lcas",
+				"www.rezora.com/includes/classes/MLS/Listing.class.php"
+			],
+			[
+				"classmlslistings",
+				"www.rezora.com/includes/classes/MLS/Listings.class.php"
+			],
+			[
+				"brokercreateour",
+				"www.rezora.com/broker_create_ourlistings.php"
+			],
+			[
+				"crmtestin",
+				"www.rezora.com/crmTesting.php"
+			],
+			[
+				"markcrelist",
+				"www.rezora.com/marketing_create_listings.php"
+			],
+			[
+				"agentcrmpr",
+				"www.rezora.com/agent_crm_process.php"
+			],
+			[
+				"cronc",
+				"www.rezora.com/cron_import_crm.php"
+			],
+			[
+				"api.clas",
+				"www.rezora.com/includes/classes/CloudElements/API.class.php"
+			],
+			[
+				"marknewsllinks",
+				"www.rezora.com/marketing_newsletters_links.php"
+			],
+			[
+				"brokerdash",
+				"www.rezora.com/broker_dashboard.php"
+			],
+			[
+				"marknewslar",
+				"www.rezora.com/marketing_newsletters_articles.php"
+			],
+			[
+				"crminsertcon",
+				"www.rezora.com/includes/classes/CloudElements/CRMInsertContacts.class.php"
+			],
+			[
+				"api.class",
+				"www.rezora.com/includes/classes/CloudElements/API.class.php"
+			],
+			[
+				"agentcrmproc",
+				"www.rezora.com/agent_crm_process.php"
+			],
+			[
+				"agentcrmac",
+				"www.rezora.com/agent_crm_account.php"
+			],
+			[
+				"agentcrm",
+				"www.rezora.com/agent_crm_review.php"
+			],
+			[
+				"adminmastertempdet",
+				"www.rezora.com/admin/master_templates_details.php"
+			],
+			[
+				"inclumaster",
+				"www.rezora.com/includes/masters.php"
+			],
+			[
+				"clicktop",
+				"www.rezora.com/clicktoplay_render_html.php"
+			],
+			[
+				"create_cli",
+				"www.rezora.com/create_clicktoplay.php"
+			],
+			[
+				"brokercreatepu",
+				"www.rezora.com/broker_create_distribute.php"
+			],
+			[
+				"brandmarkcancl",
+				"www.rezora.com/brand_marketing_cancel.php"
+			],
+			[
+				"brandmarkde",
+				"www.rezora.com/brand_marketing_details.php"
+			],
+			[
+				"brandmarkdest",
+				"www.rezora.com/brand_marketing_details_schedule.php"
+			],
+			[
+				"brokerdist",
+				"www.rezora.com/broker_create_distribute.php"
+			],
+			[
+				"brandpubl",
+				"www.rezora.com/brand_marketing_details_publish.php"
+			],
+			[
+				"clicktoplay",
+				"www.rezora.com/create_clicktoplay.php"
+			],
+			[
+				"configlocl",
+				"www.rezora.com/includes/config/local.php"
+			],
+			[
+				"billing.clas",
+				"www.rezora.com/includes/classes/Billing/Billing.class.php"
+			],
+			[
+				"brokersubsinfo",
+				"www.rezora.com/broker_subscriptions_info.php"
+			],
+			[
+				"brokersubs",
+				"www.rezora.com/broker_subscriptions.php"
+			],
+			[
+				"markstatplat",
+				"www.rezora.com/marketing_stats_platforms.php"
+			],
+			[
+				"admbrokdet",
+				"www.rezora.com/admin/brokerages_details_mls.php"
+			],
+			[
+				"adminbrokdeti",
+				"www.rezora.com/admin/brokerages_details.php"
+			],
+			[
+				"myacorgli",
+				"www.rezora.com/myaccount_organizations_list.php"
+			],
+			[
+				"agent_myli",
+				"www.rezora.com/agent_mylistings.php"
+			],
+			[
+				"dashb",
+				"www.rezora.com/dashboard.php"
+			],
+			[
+				"reportagentcon",
+				"www.rezora.com/reporting/agent_contacts.php"
+			],
+			[
+				"admintemplatede",
+				"www.rezora.com/admin/templates_details.php"
+			],
+			[
+				"api.php",
+				"www.rezora.com/includes/sitescout/API.php"
+			],
+			[
+				"creatdips",
+				"www.rezora.com/create_displayad.php"
+			],
+			[
+				"rezora",
+				"www.rezora.com/amember/plugins/protect/rezora/rezora.inc.php"
+			],
+			[
+				"rezora.inc.php",
+				"www.rezora.com/amember/plugins/protect/rezora/rezora.inc.php"
+			],
+			[
+				"brokerou",
+				"www.rezora.com/broker_ourlistings.php"
+			],
+			[
+				"imagecaptur",
+				"www.rezora.com/includes/classes/ImageCapture.class.php"
+			],
+			[
+				"createdsip",
+				"www.rezora.com/create_displayad.php"
+			],
+			[
+				"contactsaddmass",
+				"www.rezora.com/contacts_recipients_add_mass.php"
+			],
+			[
+				"api.class.p",
+				"www.rezora.com/includes/classes/CloudElements/API.class.php"
+			],
+			[
+				"myac",
+				"www.rezora.com/myaccount.php"
+			],
+			[
+				"aemberplugprrezorez.in",
+				"www.rezora.com/amember/plugins/protect/rezora/rezora.inc.php"
+			],
+			[
+				"dashbao",
+				"www.rezora.com/dashboard.php"
+			],
+			[
+				"brandmarkdpu",
+				"www.rezora.com/brand_marketing_details_publish.php"
+			],
+			[
+				"broker_ap",
+				"www.rezora.com/broker_apps.php"
+			],
+			[
+				"apps",
+				"www.rezora.com/agent_apps.php"
+			],
+			[
+				"imagecapt",
+				"www.rezora.com/includes/classes/ImageCapture.class.php"
+			],
+			[
+				"listings.class",
+				"www.rezora.com/includes/classes/MLS/Listings.class.php"
+			],
+			[
+				"brokermya",
+				"www.rezora.com/broker_myaccount.php"
+			],
+			[
+				"brandmardet",
+				"www.rezora.com/brand_marketing_details.php"
+			],
+			[
+				"inclumasters.php",
+				"www.rezora.com/includes/masters.php"
+			],
+			[
+				"includepost",
+				"www.rezora.com/includes/postcards.php"
+			],
+			[
+				"includemasters.ph",
+				"www.rezora.com/includes/masters.php"
+			],
+			[
+				"marketi",
+				"www.rezora.com/marketing.php"
+			],
+			[
+				"template.clas",
+				"www.rezora.com/includes/classes/Marketing/Template.class.php"
+			],
+			[
+				"marketing.php",
+				"www.rezora.com/marketing.php"
+			],
+			[
+				"amembeplugprorezo.inc",
+				"www.rezora.com/amember/plugins/protect/rezora/rezora.inc.php"
+			],
+			[
+				"amemrezora",
+				"www.rezora.com/amember/plugins/protect/plugin_template/rezora.inc.php"
+			],
+			[
+				"amemberplugprotrezrez.in",
+				"www.rezora.com/amember/plugins/protect/rezora/rezora.inc.php"
+			],
+			[
+				"admmasttempde",
+				"www.rezora.com/admin/master_templates_details.php"
+			],
+			[
+				"admin/templatedet",
+				"www.rezora.com/admin/templates_details.php"
+			],
+			[
+				"brandmarkdepu",
+				"www.rezora.com/brand_marketing_details_publish.php"
+			],
+			[
+				"brandmarkdetedi",
+				"www.rezora.com/brand_marketing_details_edit.php"
+			],
+			[
+				"brand_mark",
+				"www.rezora.com/brand_marketing.php"
+			],
+			[
+				"markcregener",
+				"www.rezora.com/marketing_create_general.php"
+			],
+			[
+				"templatedet",
+				"www.rezora.com/admin/templates_details.php"
+			],
+			[
+				"template_dt",
+				"www.rezora.com/admin/templates_details.php"
+			],
+			[
+				"postcard",
+				"www.rezora.com/includes/postcards.php"
+			],
+			[
+				"inclnewslet",
+				"www.rezora.com/includes/newsletters.php"
+			],
+			[
+				"markpubl",
+				"www.rezora.com/marketing_public.php"
+			],
+			[
+				"renderhtml",
+				"www.rezora.com/displayad_render_html.php"
+			],
+			[
+				"render_h",
+				"www.rezora.com/displayad_render_html.php"
+			],
+			[
+				"displayadren",
+				"www.rezora.com/displayad_render_html.php"
+			],
+			[
+				"markcreemasen",
+				"www.rezora.com/marketing_create_email_send.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": false,
+	"side_bar_visible": true,
+	"side_bar_width": 197.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
