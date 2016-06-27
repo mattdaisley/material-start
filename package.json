@@ -5,9 +5,9 @@
   "main": "app.js",
   "scripts": {
     "prestart": "npm run stop & npm install",
-    "start": "pm2 start materials-app.js",
+    "start": "NODE_ENV=dev pm2 start materials-app.js",
 
-    "dev": "NODE_ENV=dev pm2 start materials-app.js",
+    "production": "pm2 start materials-app.js",
 
     "stop": "pm2 stop materials-app",
 
