@@ -5,7 +5,7 @@ config.web = {};
 switch ( process.env.NODE_ENV ) {
 	// dev overrides for configuration values
 	case 'dev':
-		config.web.port = 3000;
+		config.web.port = 3030;
 		config.web.host = '127.0.0.1';
 		break;
 	default:
