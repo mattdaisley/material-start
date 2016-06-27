@@ -43,13 +43,26 @@
         </md-sidenav>
 
         <md-content flex id="content">
-          <img alt="{{ ul.selected.name }}" ng-src="{{ ul.selected.img }}" class="avatar">
-          <h2>{{ul.selected.name}}</h2>
-          <p>{{ul.selected.content}}</p>
-
-          <md-button class="share" md-no-ink ng-click="ul.makeContact(ul.selected)" aria-label="Share with {{ ul.selected.name }}">
-            <md-icon md-svg-icon="share"></md-icon>
-          </md-button>
+          <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+            <md-card-title>
+              <md-card-title-media>
+                <div class="md-media-md card-media">
+                  <img alt="{{ ul.selected.name }}" ng-src="{{ ul.selected.img }}" class="avatar">
+                </div>
+              </md-card-title-media>
+              <md-card-title-text>
+                <span class="md-headline">{{ul.selected.name}}</span>
+                <span class="md-subhead">{{ul.selected.content}}</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-card-actions layout="row" layout-align="start center">
+              <md-button md-no-ink ng-click="ul.makeContact(ul.selected)" aria-label="Share with {{ ul.selected.name }}">
+                <md-icon md-svg-icon="share"></md-icon>
+              </md-button>
+              <!-- <md-button>Action 2</md-button> -->
+            </md-card-actions>
+          </md-card>
+          
         </md-content>
 
     </div>
@@ -79,7 +92,7 @@
                       .icon("phone"      , "./assets/svg/phone.svg"       , 512);
 
                       $mdThemingProvider.theme('default')
-                          .primaryPalette('red')
+                          .primaryPalette('blue-grey')
                           .accentPalette('red');
 
               });
